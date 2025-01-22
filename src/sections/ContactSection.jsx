@@ -69,12 +69,15 @@ export const ContactSection = () => {
             return;
         }
 
+        const subscriptionStatus = formData.suscribed ? "✅" : "❌";
+
         const templateParams = {
             from_name: formData.name,
             from_email: formData.email,
             from_phone: formData.phone,
             from_type: formData.type,
             from_message: formData.message,
+            subscription_status: subscriptionStatus
         }
 
         // Obtener las variables desde el entorno
