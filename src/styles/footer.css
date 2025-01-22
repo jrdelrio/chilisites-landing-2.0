@@ -1,0 +1,31 @@
+@import url("../styles/app.css");
+
+#footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 130px;
+}
+
+#footer .logo img {
+
+}
+
+#footer .logo h4 {
+
+}
+
+#footer .sections a,
+#footer .contact a  {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding-left: 8px;
+}
+
+#footer .sections::before,
+#footer .contact::before{
+    content: "{";
+    color: var(--color-orange);
+}

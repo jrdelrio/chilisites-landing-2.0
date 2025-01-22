@@ -1,0 +1,117 @@
+@import url('app.css');
+
+#contact-section {
+    padding-bottom: 50px
+}
+
+#contact-section form h4 {
+    color: var(--color-black);
+    margin-bottom: 0;
+    padding: 0px 0 20px 20px;
+}
+
+#contact-section form input,
+#contact-section form textarea {
+    border: none;
+    padding: 20px 0 20px 20px;
+    display: block;
+    outline: none;
+    width: 100%;
+    background-color: var(--color-gray-1);
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+#contact-section form input[name=phone] {
+    margin-left: 15px;
+}
+
+#contact-section form .checkbox {
+    float: left;
+    display: flex;
+    gap: 10px;
+}
+
+#contact-section form .checkbox input[type="checkbox"] {
+    margin-bottom: 0;
+}
+
+#contact-section form input:focus-visible,
+#contact-section form textarea:focus-visible {
+    border: none;
+    outline: none;
+}
+
+#contact-section form textarea {
+    width: 100%;
+    height: 130px;
+}
+
+#contact-section form .row-name-email {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#contact-section form .row-name-email input[type='email'] {
+    width: 50%;
+}
+
+/* estilos de placeholders */
+#contact-section form input::placeholder,
+#contact-section form textarea::placeholder {
+    color: var(--color-black);
+    opacity: 1;
+    /* Asegura que el color se vea claramente en algunos navegadores */
+}
+
+/* Compatibilidad con navegadores antiguos */
+#contact-section form input::-webkit-input-placeholder,
+#contact-section form textarea::-webkit-input-placeholder {
+    color: var(--color-black);
+}
+
+#contact-section form input::-moz-placeholder,
+#contact-section form textarea::-moz-placeholder {
+    color: var(--color-black);
+}
+
+#contact-section form input:-ms-input-placeholder,
+#contact-section form textarea:-ms-input-placeholder {
+    color: var(--color-black);
+}
+
+#contact-section form input:-moz-placeholder,
+#contact-section form textarea:-moz-placeholder {
+    color: var(--color-black);
+}
+
+#contact-section form .content-center {
+    width: 100%;
+    justify-items: center;
+    margin-top: 50px;
+}
+
+#contact-section .success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-purple);
+}
+
+/* Cuando el mensaje es visible */
+#contact-section .success-message.visible {
+    opacity: 1;  /* Aparece con opacidad completa */
+    visibility: visible;
+    color: rgba(87, 58, 231, 1); /* Color morado sin transparencia */
+    transition: color .5s ease-in;
+}
+
+/* Ocultar de nuevo después de 4 segundos */
+#contact-section .success-message.hidden {
+    opacity: 0;  /* Se desvanece */
+    color: rgba(87, 58, 231, 0); /* Vuelve a ser transparente */
+}

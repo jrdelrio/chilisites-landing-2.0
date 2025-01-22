@@ -1,0 +1,11 @@
+#blog-section {
+    background-color: pink;
+    padding-bottom: 50px;
+}
+
+#blog-section .content-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: blue 1px solid;
+}

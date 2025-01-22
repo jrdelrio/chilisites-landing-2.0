@@ -1,0 +1,12 @@
+nav.navbar {
+    padding: 40px 0;
+}
+
+nav img {
+    height: 60px;
+    cursor: pointer;
+}
+
+nav ul {
+    gap: 5.5rem
+}

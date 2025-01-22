@@ -1,0 +1,125 @@
+:root {
+    --blue: #4417DD;
+    --blue-dark: #240d74;
+    --light-purple: #E8E7FF
+}
+
+.quote-card {
+    background-color: white;
+    border-radius: 12px;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    margin-right: 50px;
+    max-width: 500px;
+}
+
+.quote-card img {
+    object-fit: contain;
+    padding: 15px;
+    margin-right: 0;
+}
+
+.quote-text {
+    justify-content: space-around;
+    padding-top: 10px;
+    font-size: .9rem;
+}
+
+.quote-text p {
+    font-family: "Montserrat", sans-serif;
+    text-align: start;
+    padding-right: 10px;
+}
+
+.quote-text h3 {
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+
+}
+
+/* Smartphones (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+
+    .quote-card {
+        width: 90vw;
+    }
+
+    .img-card-quote {
+        height: 75%;
+        width: auto;
+        max-width: 90vw;
+        padding: 8px;
+        aspect-ratio: 1 / 1;
+        /* Asegura que la imagen sea cuadrada */
+        object-fit: cover;
+        margin-right: 5px !important;
+    }
+
+    .margin-x-5 {
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+
+    .quote-text {
+        height: 100%;
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .quote-text p {
+        font-size: 0.8rem;
+    }
+
+    .quote-text h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablets (min-width: 576px) and (max-width: 991.98px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .sm-px-0 {
+        padding: 0 !important;
+    }
+}
+
+/* Desktops (min-width: 992px) */
+@media (min-width: 992px) {
+    .sm-px-0 {
+        padding: 0 !important;
+    }
+
+    .col-lg-6 {
+       width: 100% !important; 
+    }
+}
+
+.img-card-quote {
+    height: 50%;
+    width: auto;
+    padding: 8px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.quote-text {
+    padding-top: 0;
+    height: fit-content;
+    text-align-last: left;
+}
+
+.quote-text p,
+.quote-text h3 {
+    margin-bottom: 0;
+    color: var(--blue-dark);
+}
+
+.quote-text h3 {
+    font-size: 1.3rem;
+}

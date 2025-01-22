@@ -1,0 +1,43 @@
+/* Contenedor del checkbox */
+.custom-checkbox {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px; /* Opcional, dependiendo de la imagen */
+    border: 2px solid transparent;
+    
+    /* Sombra que da el efecto 3D */
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+
+    /* Degradado de fondo */
+    background: linear-gradient(to right, #FFFFFF 90%, #DCB6F4 10%);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Estilo del checkbox cuando está marcado */
+.custom-checkbox:checked {
+    border: none;
+    background: linear-gradient(to right, #FFFFFF 90%, #DCB6F4 10%);
+}
+
+/* El check dentro del checkbox */
+.custom-checkbox:checked::after {
+    content: '\2713'; /* Unicode del check */
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-purple);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Ajustar la alineación del label */
+label {
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-black);
+}

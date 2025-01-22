@@ -1,0 +1,19 @@
+@import url("./app.css");
+
+#quotes-about-section {
+    background-color: blueviolet;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+#quotes-about-section .content-center {
+    justify-items: center;
+}
+
+#quotes-about-section .content-center .quotes {
+    border: 1px solid blue;
+}
+
+#quotes-about-section p span {
+    color: var(--color-orange);
+}
