@@ -1,6 +1,7 @@
+import { RoundedCarousel } from "../components/RoundedCarousel";
 import { SectionTitle } from "../components/SectionTitle"
 
-import "../styles/blog-section.css";
+import "../styles/blog-section.scss";
 
 export const BlogSection = () => {
 
@@ -13,10 +14,8 @@ export const BlogSection = () => {
                 <SectionTitle colorBracket={colorPurple} titleContent='BLOG' colorTitle={colorWhite} />
             </div>
             <div className="container-fluid">
-                <div className="content-center grid">
-                    grid
-                    grid
-                    grid
+                <div className="content-center">
+                    <RoundedCarousel />
                 </div>
             </div>
         </section>
