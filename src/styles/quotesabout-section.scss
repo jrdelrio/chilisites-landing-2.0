@@ -1,0 +1,34 @@
+@import "./app.css";
+
+#quotes-about-section {
+    background-color: blueviolet;
+    padding-top: 80px;
+    padding-bottom: 50px;
+
+    .content-center {
+        justify-items: center;
+
+        button {
+            margin: auto;
+        }
+
+        .quotes {
+            border: 1px solid blue;
+        }
+    }
+
+    p {
+        span {
+            color: var(--color-orange);
+        }
+    }
+
+    .about-us {
+        @media (width < 500px) {
+            & > p {
+                padding-left: 15px;
+                width: 90%;
+            }
+        }
+    }
+}

@@ -1,6 +1,8 @@
-import chiliSitesLogo from "../img/logo-chilisites-lg.png";
-import "../styles/navbar.css";
 import { ContactButton } from "./ContactButton";
+
+import chiliSitesLogo from "../img/chiliSites/logo-chilisites-fondo-solido.png";
+
+import "../styles/navbar.scss";
 
 export const Navbar = () => {
     return (
@@ -11,7 +13,7 @@ export const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse justify-content-center" id="navbarsExample07">
+                <div className="collapse navbar-collapse justify-content-center font-roboto" id="navbarsExample07">
                     <ul className="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
                         <li className="nav-item">
                             <a className="nav-link text-white" aria-current="page" href="">Servicios</a>

@@ -2,7 +2,7 @@ import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
 import { SectionTitle } from "../components/SectionTitle";
 import { Slider } from "../components/Slider";
 
-import "../styles/quotesabout-section.css";
+import "../styles/quotesabout-section.scss";
 
 export const QuotesAboutSection = () => {
 
@@ -27,8 +27,8 @@ export const QuotesAboutSection = () => {
                     />
                 </div>
 
-                <div className="about-us">
-                    <SectionTitle titleContent='<SOBRE_NOSOTROS' colorBracket={colorOrange} colorTitle={colorWhite} />
+                <div className="about-us font-roboto">
+                    <SectionTitle titleContent='SOBRE_NOSOTROS' colorBracket={colorOrange} colorTitle={colorWhite} />
                     <p className="color-white">{'<'}Somos <span>ChiliSites</span>, una agencia digital dedicada a impulsar PyMES a través de una presencia online poderosa. <span>Desarrollamos sitios web</span> en Shopify, Wordpress y creamos soluciones personalizadas, sin plantillas predefinidas, adaptadas a tus necesidades. Ofrecemos <span>estrategicas de SEO</span> que mejoran tu visibilidad y crecimiento de manera medible.</p>
                     <p className="color-white">
                         Nos apasiona trabajar contigo en cada paso, enfocándonos en resultados claros que hagan

@@ -1,7 +1,7 @@
 import { CardProject } from "../components/CardProject";
 import { SectionTitle } from "../components/SectionTitle";
 
-import "../styles/projects-section.css";
+import "../styles/projects-section.scss";
 
 import foto from "../img/10430812.jpg";
 
@@ -17,26 +17,26 @@ export const ProjectsSection = () => {
             link: '',
             type: 'CHILISITE'
         },
-        {
-            cardTitle: '<Victoria_Maldonado_Ruiz',
-            image: foto,
-            link: '',
-            type: 'CHILISITE'
-        },
+        // {
+        //     cardTitle: '<Victoria_Maldonado_Ruiz',
+        //     image: foto,
+        //     link: '',
+        //     type: 'CHILISITE'
+        // },
         {
             cardTitle: '<Décima_Propiedades',
             image: foto,
             link: '',
             type: 'CHILISITE'
         },
+        // {
+        //     cardTitle: '<Espacio_Confluye',
+        //     image: foto,
+        //     link: '',
+        //     type: 'CHILISITE'
+        // },
         {
-            cardTitle: '<Espacio_Confluye',
-            image: foto,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Raimundo_Del_Rio_Photography',
+            cardTitle: '<Raimundo_DelRio_Photography',
             image: foto,
             link: '',
             type: 'CHILISITE'
@@ -52,10 +52,10 @@ export const ProjectsSection = () => {
     return (
         <section id="projects-section">
             <div className="container">
-                <SectionTitle colorBracket={colorBracket} colorContent={colorContent} titleContent='<PROYECTOS' />
+                <SectionTitle colorBracket={colorBracket} colorContent={colorContent} titleContent='PROYECTOS' />
             </div>
             <div className="container-fluid">
-                <div className="row services-grid gy-4">
+                <div className="row gy-4">
                     {projects.map((project, index) =>
                         <CardProject key={index} cardTitle={project.cardTitle} image={project.image} type={project.type}/>
                     )}

@@ -7,7 +7,7 @@ export const HeaderSection = () => {
 
     const styles = {
         height: '300px',
-        width: '470px',
+        width: '400px',
         margin: '20px 250px 50px 0px',
         backgroundColor: 'black'
     };

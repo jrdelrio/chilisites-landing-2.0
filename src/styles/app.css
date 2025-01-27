@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 :root {
     --color-white: #ffffff;
     --color-gray-1: #f8f8f8;
@@ -26,4 +28,12 @@
 
 .color-pink {
     color: var(--color-pink);
+}
+
+.font-roboto {
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+.font-bold {
+    font-weight: bold;
 }

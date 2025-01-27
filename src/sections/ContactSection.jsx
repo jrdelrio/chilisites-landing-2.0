@@ -3,7 +3,7 @@ import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
 import { SectionTitle } from "../components/SectionTitle"
 import { CustomCheckbox } from "../components/CustomCheckbox";
 
-import "../styles/contact-section.css";
+import "../styles/contact-section.scss";
 
 import emailjs from "emailjs-com";
 
@@ -18,10 +18,7 @@ export const ContactSection = () => {
     const colorOrange = 'var(--color-orange)';
     const colorPink = 'var(--color-pink)';
 
-    const tempStyle = {
-        width: '70%',
-        margin: 'auto',
-    }
+   
 
     const emptyForm = {
         name: '',
@@ -147,11 +144,11 @@ export const ContactSection = () => {
     }, [formData])
 
     return (
-        <section id='contact-section'>
+        <section id='contact-section' className="font-roboto">
             <div className="container">
-                <SectionTitle titleContent={'<CONTÁCTANOS'} colorTitle={colorBlack} colorBracket={colorPurple} />
-                <form action="" style={tempStyle}>
-                    <h4>{'<'}Listo_para_el_siguiente_paso?{'>'}</h4>
+                <SectionTitle titleContent='CONTÁCTANOS' colorTitle={colorBlack} colorBracket={colorPurple} />
+                <form action="">
+                    <h4 className="font-bold">{'<Listo_para_el_siguiente_paso?>'}</h4>
                     <input
                         type="text"
                         value={formData.name}
@@ -161,21 +158,21 @@ export const ContactSection = () => {
                         onChange={handleChange}
                     />
 
-                    <div className="row-name-email">
-                        <input
-                            type="email"
-                            value={formData.email}
-                            placeholder="<Correo />"
-                            id="form-email"
-                            name="email"
-                            onChange={handleChange}
-                        />
+                    <div className="row-email-phone">
                         <input
                             type="phone"
                             value={formData.phone}
                             placeholder="<Teléfono />"
                             id="form-phone"
                             name="phone"
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="email"
+                            value={formData.email}
+                            placeholder="<Correo />"
+                            id="form-email"
+                            name="email"
                             onChange={handleChange}
                         />
                     </div>

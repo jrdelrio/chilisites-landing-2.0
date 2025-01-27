@@ -1,24 +1,19 @@
+import "../styles/section-title.scss"
+
 export const SectionTitle = ({ colorBracket, titleContent, colorTitle }) => {
 
-    const titleStyles = {
-        paddingTop: '40px',
-        paddingBottom: '40px'
-    };
-
-    const bracketStyles = {
-        color: colorBracket,
-        position: 'relative',
-        top: '-15px',
-    };
-
-    const contentStyles = {
-        color: colorTitle
+    // Función para reemplazar las letras "o" por "0"
+    const formatTitleContent = (content) => {
+        return content.replace(/o/g, "0").replace(/O/g, "0"); // Reemplaza tanto minúsculas como mayúsculas
     };
 
     return (
-        <h2 style={titleStyles}>
-            <span style={bracketStyles}>{'{'}</span>
-            <span style={contentStyles}>{titleContent}</span>
+        <h2 className="section-title font-roboto text-replace-o">
+            <span className="bracket" style={{color: colorBracket}}>{'{'}</span>
+            <span className="main-content" style={{color: colorTitle}} aria-label={titleContent}>
+                {'<' + formatTitleContent(titleContent)}
+
+            </span>
         </h2>
     )
 }

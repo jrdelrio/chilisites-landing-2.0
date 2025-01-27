@@ -48,19 +48,19 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
     const bgR_RGBA = hexToRGBA(resolvedBgColorR, 1);
 
     const styles = {
-        justifyItems: 'center',
         background: `linear-gradient(135deg, ${bgL_RGBA} 75%, ${bgR_RGBA} 100%)`,
         color: contentColor,
-        cursor: "pointer"
     };
 
     return (
         <div className="col-md-4 col-sm-6 col-12">
-            <div className="service-card"
+            <div className="service-card font-roboto"
                 style={styles}>
-                <h3>{cardTitle}</h3>
-                <h4 style={{ fontSize: '6rem' }}>{cardIcon}</h4>
-                {/* <img src={cardIcon} alt="" /> */}
+                <h3 className='font-bold'>{cardTitle}</h3>
+                {/* <h4 style={{ fontSize: '6rem' }}>{cardIcon}</h4> */}
+                <div style={{ width: '50%', height: '100px' }} >
+                    {cardIcon}
+                </div>
             </div>
         </div>
     )

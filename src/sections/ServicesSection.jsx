@@ -1,7 +1,18 @@
 import { CardService } from "../components/CardService";
 import { SectionTitle } from "../components/SectionTitle";
 
-import "../styles/services-section.css";
+import "../styles/services-section.scss";
+
+// vectores
+import { ReactComponent as VectorShop } from "../img/vectors/tienda-vector.svg";
+import { ReactComponent as VectorAurea } from "../img/vectors/aurea-vector.svg";
+import { ReactComponent as VectorB2B } from "../img/vectors/b2b-vector.svg";
+import { ReactComponent as VectorBrain } from "../img/vectors/brain-vector.svg";
+import { ReactComponent as VectorArrow } from "../img/vectors/arrow-vector.svg";
+import { ReactComponent as VectorCircles } from "../img/vectors/circles-vector.svg";
+import { ReactComponent as VectorMagnet } from "../img/vectors/magnet-vector.svg";
+import { ReactComponent as VectorCamera } from "../img/vectors/camera-vector.svg";
+import { ReactComponent as VectorAnimation } from "../img/vectors/animation-vector.svg";
 
 export const ServicesSection = () => {
 
@@ -13,71 +24,69 @@ export const ServicesSection = () => {
 
     const services = [
         {
-            cardTitle: 'Creación de Marca',
-            cardIcon: '🌐',
+            cardTitle: 'Mejora tu tienda Shopify',
+            cardIcon: <VectorShop />,
             bgColorL: colorOrange,
             bgColorR: colorPink,
             contentColor: colorBlack
         },
         {
             cardTitle: 'Diseño Web',
-            cardIcon: '📈',
+            cardIcon: <VectorAurea />,
             bgColorL: colorPink,
             bgColorR: colorWhite,
             contentColor: colorPurple
         },
         {
             cardTitle: 'Desarrollo Web B2B Corporativo',
-            cardIcon: '🔍',
+            cardIcon: <VectorB2B />,
             bgColorL: colorWhite,
             bgColorR: colorPink,
             contentColor: colorBlack
         },
         {
             cardTitle: 'Soluciones E-Commerce',
-            cardIcon: '🛒',
+            cardIcon: <VectorBrain />,
             bgColorL: colorPurple,
             bgColorR: colorPink,
             contentColor: colorWhite
         },
         {
-            cardTitle: 'Mejora tu tienda Shopify',
-            cardIcon: '🎨',
+            cardTitle: 'SEO',
+            cardIcon: <VectorArrow />,
             bgColorL: colorBlack,
             bgColorR: colorBlack,
             contentColor: colorPink
         },
         {
-            cardTitle: 'SEO',
-            cardIcon: '💼',
+            cardTitle: 'Creación de Marca y Re-Branding',
+            cardIcon: <VectorCircles />,
             bgColorL: colorOrange,
             bgColorR: colorPink,
             contentColor: colorBlack
         },
         {
             cardTitle: 'Campañas Digitales',
-            cardIcon: '🖌️',
+            cardIcon: <VectorMagnet />,
             bgColorL: colorPink,
             bgColorR: colorWhite,
             contentColor: colorPurple
         },
         {
             cardTitle: 'Contenidos para redes sociales',
-            cardIcon: '🛠️',
+            cardIcon: <VectorCamera />,
             bgColorL: colorPurple,
             bgColorR: colorPink,
             contentColor: colorPink
         },
         {
-            cardTitle: 'Dirección de Arte',
-            cardIcon: '📱',
+            cardTitle: 'Animación digital',
+            cardIcon: <VectorAnimation />,
             bgColorL: colorBlack,
             bgColorR: colorBlack,
             contentColor: colorWhite
         }
     ];
-
-
 
     return (
         <section id="services-section">
@@ -85,7 +94,7 @@ export const ServicesSection = () => {
                 <SectionTitle
                     colorBracket={colorOrange}
                     colorContent={colorBlack}
-                    titleContent='<SERVICIOS' />
+                    titleContent='SERVICIOS' />
                 <div className="row services-grid gy-4">
                     {services.map((service, index) =>
                         <CardService

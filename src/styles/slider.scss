@@ -1,0 +1,88 @@
+@import "./app.css";
+
+.slider {
+    background: transparent;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    // border-radius: 10px;
+
+    &::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+
+    &::before {
+        left: 0;
+        top: 0;
+    }
+
+    // Para futuros efectos de gradientes
+    &::before,
+    &::after {
+        background: linear-gradient(to right, rgba(138, 43, 226, 1) 0%, rgba(138, 43, 226, 0) 100%);
+        content: "";
+        height: 300px;
+        position: absolute;
+        width: 100px;
+        z-index: 2;
+    }
+}
+
+.slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(500px * 10);
+
+}
+
+.slide {
+    height: fit-content;
+    max-width: 48vw;
+    margin: 0 15px;
+    border-radius: 10px;
+    background-color: var(--light-purple);
+    text-align-last: center;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-500px * 5));
+        transform: translateX(calc(-500px * 5));
+    }
+}
+
+// Media queries
+@media (width < 575.98px) {
+    .slider {
+        &::before,
+        &::after {
+            width: 80px;
+        }
+    }
+
+    .max-width-sm-90vw {
+        max-width: 90vw;
+        margin: auto !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    // Agregar estilos específicos para tablet si es necesario
+}
+
+@media (min-width: 992px) {
+    .max-width-lg-85vw {
+        max-width: 85vw;
+        margin: auto !important;
+    }
+}

@@ -1,0 +1,52 @@
+@import "../styles/app.css";
+
+#footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 130px;
+
+    .logo {
+        img {
+            margin-bottom: 20px;
+            height: 80px;
+            cursor: pointer;
+            transition: scale .2s ease;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+
+    .sections,
+    .contact {
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding-left: 8px;
+            transition: color .2s ease, scale .2s ease;
+
+            &:hover {
+                color: var(--color-pink);
+                scale: 1.05;
+            }
+        }
+
+        &::before {
+            content: "{";
+            color: var(--color-orange);
+        }
+    }
+
+    @media (width <= 768px) {
+        display: block;
+        padding-left: 60px;
+
+        & > * {
+            margin-bottom: 20px;
+        }
+    }
+}

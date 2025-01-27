@@ -10,7 +10,7 @@ export const BlogSection = () => {
     return (
         <section id='blog-section'>
             <div className="container">
-                <SectionTitle colorBracket={colorPurple} titleContent='<BLOG' colorTitle={colorWhite} />
+                <SectionTitle colorBracket={colorPurple} titleContent='BLOG' colorTitle={colorWhite} />
             </div>
             <div className="container-fluid">
                 <div className="content-center grid">

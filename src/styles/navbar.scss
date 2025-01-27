@@ -1,0 +1,95 @@
+nav.navbar {
+    padding: 40px 0;
+
+    img.logo {
+        height: 80px;
+        cursor: pointer;
+        transition: transform 0.6s ease-in-out;
+
+        &:hover {
+            transform: rotate(360deg);
+        }
+
+        &:not(:hover) {
+            transform: rotate(0deg);
+        }
+    }
+
+    ul {
+        gap: 5.5rem;
+
+        li {
+            transition: scale 0.2s ease;
+            &:hover {
+                scale: 1.2;
+            }
+        }
+    }
+
+    button.navbar-toggler {
+        height: 40px !important;
+        padding: 12px !important;
+        transition: scale 0.1s ease-in-out;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    .navbar-toggler {
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        outline: none !important;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none;
+            position: relative;
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            display: block;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 30px;
+                height: 3px;
+                background-color: black;
+                transition: transform 0.3s ease;
+            }
+
+            &::before {
+                top: -8px;
+            }
+
+            &::after {
+                top: 8px;
+            }
+        }
+
+        &:hover .navbar-toggler-icon {
+            background-color: black;
+        }
+    }
+
+    @media (max-width: 992px) {
+        ul {
+            gap: 15px;
+        }
+
+        .navbar-toggler {
+            border-color: black;
+        }
+
+        .navbar-toggler-icon {
+            background-color: black;
+        }
+    }
+}

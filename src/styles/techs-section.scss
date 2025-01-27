@@ -1,0 +1,73 @@
+@import 'app.css';
+
+/* Tecnologías grid */
+#techs-section {
+    .technologies-grid {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se adapten a la pantalla */
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 50px;
+
+        /* Items de tecnología */
+        .technology-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            img {
+                width: auto;
+                height: 55px;
+                filter: grayscale(100%);
+                transition: grayscale .2s ease, scale .2s ease;
+
+                @media (width < 500px) {
+                    height: 40px;
+                }
+
+                &:hover {
+                    filter: grayscale(0%);
+                    scale: 1.2;
+                }
+            }
+
+            /* Tooltip configurado correctamente */
+            .tooltiptext {
+                visibility: hidden;
+                position: absolute;
+                bottom: 120%; /* Mueve el tooltip hacia arriba */
+                left: 50%;
+                transform: translateX(-50%);
+                width: fit-content;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                padding: 8px 10px;
+                border-radius: 6px;
+                z-index: 1;
+                opacity: 0;
+                transition: opacity .6s;
+            }
+
+            &:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* Flecha del tooltip */
+.tooltip-top::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}

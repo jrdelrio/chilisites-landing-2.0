@@ -1,4 +1,4 @@
-import "../styles/card-quote.css";
+import "../styles/card-quote.scss";
 
 export const CardQuote = ({ id, image, quote, empresa, textColor, bgColor, imgAltText }) => {
 

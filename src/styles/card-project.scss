@@ -1,0 +1,128 @@
+@import "app.css";
+
+.project-card {
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 1 / 0.75;
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out;
+
+        // &:hover {
+        //     transform: translateY(-5px);
+        // }
+    }
+
+    &:hover img {
+        filter: brightness(50%);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        float: left;
+        padding: 10px;
+        margin: 0;
+        position: relative;
+        left: 10px;
+        margin-top: 8px;
+        color: var(--color-black);
+
+        &::before {
+            content: "{";
+            position: absolute;
+            bottom: 20px;
+            left: -6px;
+            color: var(--color-orange);
+        }
+
+        @media (max-width: 770px) {
+            font-size: 1.1rem;
+
+            &::before {
+                left: -2px;
+            }
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+        color: var(--color-white);
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        margin-bottom: 15px;
+    }
+
+    &:hover {
+        .project-link,
+        h4,
+        .project-card-footer svg {
+            opacity: 1;
+        }
+    }
+
+    .project-card-footer {
+        display: flex;
+        position: absolute;
+        bottom: 60px;
+        left: 25px;
+        width: 88%;
+        justify-content: space-between;
+
+        svg {
+            transition: transform 0.1s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+
+            &.arrow-up {
+                transform: rotate(45deg);
+
+                &:hover {
+                    transform: scale(1.3) rotate(45deg);
+                }
+            }
+
+            &.symbol-plus:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.project-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-white);
+    text-decoration: none;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, font-size 0.3s ease;
+
+    &:hover {
+        font-size: 35px;
+    }
+
+    @media (max-width: 1000px) {
+        font-size: 24px;
+
+        &:hover {
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+
+        &:hover {
+            font-size: 28px;
+        }
+    }
+}

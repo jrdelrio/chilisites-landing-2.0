@@ -1,11 +1,13 @@
-import "../styles/footer.css";
+import "../styles/footer.scss";
+
+import logoChilisites from "../img/chiliSites/logo-chilisites-b&w.png";
 
 export const Footer = () => {
 
     return (
-        <footer id="footer">
+        <footer id="footer" className="font-roboto">
             <div className="logo">
-                <img src="#" alt="chiliSites Logo" srcSet="" />
+                <img src={logoChilisites} alt="chiliSites Logo" srcSet="" />
                 <h4>{"<Made_in_Chile />"}</h4>
             </div>
 

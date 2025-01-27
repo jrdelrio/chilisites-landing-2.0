@@ -1,0 +1,48 @@
+#projects-section {
+    padding-top: 80px;
+    padding-bottom: 50px;
+
+    .container-fluid {
+        justify-items: center;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(
+            2,
+            1fr
+        ); // 2 columnas en pantallas grandes
+        gap: 20px; // Espacio entre las tarjetas
+        margin-right: 8vw;
+        margin-left: 8vw;
+        justify-items: center;
+
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr; // 1 columna en dispositivos móviles
+            margin-right: 2vw;
+            margin-left: 2vw;
+        }
+    }
+
+    a.link-all-projects {
+        margin-top: 40px;
+        text-decoration: none;
+        font-size: 1.8rem;
+        display: inline-block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    @media (width < 500px) {
+        a.link-all-projects {
+            font-size: 1.5rem !important;
+        }
+    }
+
+    h3 {
+        text-align: center;
+    }
+}

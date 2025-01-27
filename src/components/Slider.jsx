@@ -1,13 +1,13 @@
 
 import { CardQuote } from "./CardQuote";
 
-import algeduc from "../img/algeduc.png";
-import angeladelrio from "../img/angeladelriopasteleria.png";
-import sieteTintas from "../img/sieteTintas.png";
-import decima from "../img/decimaPropiedades.png";
-import srodillo from "../img/srodillo.png";
+import algeduc from "../img/clients-logos/algeduc.png";
+import angeladelrio from "../img/clients-logos/angeladelriopasteleria.png";
+import sieteTintas from "../img/clients-logos/sieteTintas.png";
+import decima from "../img/clients-logos/decimaPropiedades.png";
+import srodillo from "../img/clients-logos/srodillo.png";
 
-import "../styles/slider.css";
+import "../styles/slider.scss";
 
 export const Slider = () => {
 
@@ -87,7 +87,7 @@ export const Slider = () => {
         {
             id: 9,
             image: srodillo,
-            quote: '"Me ayudaron diseñando y montando mi sitio web de manera muy efectiva. Llegué con ideas y me llevé soluciones al poco tiempo. Muy recomendado."',
+            quote: '"Me ayudaron diseñando y montando mi sitio web de manera muy efectiva. Llegué con ideas y me llevé soluciones al poco tiempo. Muy recomendado para cualquier proyecto web!"',
             empresa: "SEBASTIÁN RODILLO DESIGNER",
             bgColor: "",
             textColor: "",

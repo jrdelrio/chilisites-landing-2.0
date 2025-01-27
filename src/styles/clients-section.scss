@@ -1,0 +1,58 @@
+#clients-section {
+    padding: 50px 0;
+    text-align: center;
+
+    .clients-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px 40px;
+        justify-content: center;
+
+        .client-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-height: 90px;
+                width: auto;
+
+                @media (max-width: 576px) {
+                    max-height: 60px;
+                }
+            }
+        }
+    }
+
+    // Media query para tablets (máximo 4 elementos por fila)
+    @media (width < 992px) {
+        .clients-grid {
+            grid-template-columns: repeat(4, 1fr); // Máximo 4 elementos por fila
+        }
+    }
+
+    // Media query para móviles (máximo 2 elementos por fila)
+    @media (max-width: 576px) {
+        .clients-grid {
+            grid-template-columns: repeat(2, 1fr); // Máximo 2 elementos por fila
+            justify-content: center; // Centrar elementos si hay menos
+        }
+
+        .client-logo img {
+            width: 80px; // Tamaño más pequeño para móviles
+        }
+    }
+
+    // Estilo adicional para asegurar centrado en filas incompletas
+    .clients-grid:has(.client-logo:nth-child(6n + 1)) {
+        justify-content: center;
+    }
+
+    // Estilo adicional para centrar la última fila si es incompleta
+    .clients-grid:after {
+        content: "";
+        display: block;
+        width: 100%;
+        grid-column: span 6; // Ocupa el espacio de 6 columnas para empujar la última fila
+    }
+}

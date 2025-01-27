@@ -1,7 +1,7 @@
 :root {
-    --blue: #4417DD;
+    --blue: #4417dd;
     --blue-dark: #240d74;
-    --light-purple: #E8E7FF
+    --light-purple: #e8e7ff;
 }
 
 .quote-card {
@@ -9,41 +9,42 @@
     border-radius: 12px;
     align-items: center;
     padding: 10px;
-    width: 90%;
+    width: 100%;
     margin: auto;
-    margin-right: 50px;
     max-width: 500px;
-}
+    max-width: 20vw;
+    height: 100%;
 
-.quote-card img {
-    object-fit: contain;
-    padding: 15px;
-    margin-right: 0;
+    img {
+        object-fit: contain;
+        padding: 5px;
+        margin-right: 0;
+    }
 }
 
 .quote-text {
     justify-content: space-around;
     padding-top: 10px;
-    font-size: .9rem;
+    font-size: 0.9rem;
+    padding-left: 15px;
+    flex-grow: 1;
+
+    p {
+        font-family: "Montserrat", sans-serif;
+        text-align: start;
+        padding-right: 10px;
+    }
+
+    h3 {
+        font-family: "Lalezar", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+    }
 }
 
-.quote-text p {
-    font-family: "Montserrat", sans-serif;
-    text-align: start;
-    padding-right: 10px;
-}
-
-.quote-text h3 {
-    font-family: "Lalezar", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5rem;
-
-}
-
-/* Smartphones (max-width: 575.98px) */
-@media (max-width: 575.98px) {
-
+/* Media queries */
+@media (width < 575.98px) {
     .quote-card {
         width: 90vw;
     }
@@ -53,8 +54,7 @@
         width: auto;
         max-width: 90vw;
         padding: 8px;
-        aspect-ratio: 1 / 1;
-        /* Asegura que la imagen sea cuadrada */
+        aspect-ratio: 1 / 1; /* Asegura que la imagen sea cuadrada */
         object-fit: cover;
         margin-right: 5px !important;
     }
@@ -70,37 +70,39 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-    }
+        padding-bottom: 20px;
+        padding-left: 0;
 
-    .quote-text p {
-        font-size: 0.8rem;
-    }
+        p {
+            font-size: 0.8rem;
+        }
 
-    .quote-text h3 {
-        font-size: 1.2rem;
+        h3 {
+            font-size: 1.2rem;
+        }
     }
+    
 }
 
-/* Tablets (min-width: 576px) and (max-width: 991.98px) */
-@media (min-width: 576px) and (max-width: 991.98px) {
+@media (576px < width < 991.98px) {
     .sm-px-0 {
         padding: 0 !important;
     }
 }
 
-/* Desktops (min-width: 992px) */
 @media (min-width: 992px) {
     .sm-px-0 {
         padding: 0 !important;
     }
 
     .col-lg-6 {
-       width: 100% !important; 
+        width: 100% !important;
     }
 }
 
+/* Imagen de la tarjeta de cita */
 .img-card-quote {
-    height: 50%;
+    height: 120px;
     width: auto;
     padding: 8px;
     aspect-ratio: 1 / 1;
@@ -110,16 +112,17 @@
 
 .quote-text {
     padding-top: 0;
+    padding-bottom: 20px;
     height: fit-content;
     text-align-last: left;
-}
 
-.quote-text p,
-.quote-text h3 {
-    margin-bottom: 0;
-    color: var(--blue-dark);
-}
+    p,
+    h3 {
+        margin-bottom: 0;
+        color: var(--blue-dark);
+    }
 
-.quote-text h3 {
-    font-size: 1.3rem;
+    h3 {
+        font-size: 1.3rem;
+    }
 }
