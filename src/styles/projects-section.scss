@@ -16,6 +16,8 @@
         margin-right: 8vw;
         margin-left: 8vw;
         justify-items: center;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
 
         @media (max-width: 767px) {
             grid-template-columns: 1fr; // 1 columna en dispositivos móviles
@@ -30,6 +32,7 @@
         font-size: 1.8rem;
         display: inline-block;
         transition: transform 0.3s ease;
+        cursor: pointer;
 
         &:hover {
             transform: scale(1.1);

@@ -55,14 +55,14 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
     return (
         <div className="col-md-4 col-sm-6 col-12">
             <div
-                class="service-card font-roboto"
-                ontouchstart="this.classList.toggle('hover');"
+                className="service-card font-roboto"
+                onTouchStart="this.classList.toggle('hover');"
             >
-                <div class="service-card-container">
+                <div className="service-card-container">
                     <div
-                        class="front" style={styles}
+                        className="front" style={styles}
                     >
-                        <div class="inner">
+                        <div className="inner">
                             <h3>{cardTitle}</h3>
                             <div>
                                 {cardIcon}
@@ -70,8 +70,8 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
                         </div>
                     </div>
 
-                    <div class="back" style={styles}>
-                        <div class="inner">
+                    <div className="back" style={styles}>
+                        <div className="inner">
                             <p>
                                 {description}
                             </p>

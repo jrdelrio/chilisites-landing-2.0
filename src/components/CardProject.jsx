@@ -1,11 +1,12 @@
+import { forwardRef } from "react";
 import { ArrowUp } from "../img/icons/ArrowUp";
 import { SymbolPlus } from "../img/icons/SymbolPlus";
 import "../styles/card-project.scss";
 
-export const CardProject = ({ cardTitle, image, link, type }) => {
+export const CardProject = forwardRef(({ cardTitle, image, link, type }, ref) => {
 
     return (
-        <div className="project-card font-roboto">
+        <div className="project-card font-roboto" ref={ref}>
             <img src={image} alt="" />
             <div className="project-card-footer">
                 <h4>{type}</h4>
@@ -18,4 +19,4 @@ export const CardProject = ({ cardTitle, image, link, type }) => {
             <a href={link} className="project-link">{'<Ver_Proyecto>'}</a>
         </div>
     )
-}
+})
