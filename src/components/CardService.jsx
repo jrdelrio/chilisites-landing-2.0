@@ -34,7 +34,7 @@ const hexToRGBA = (hex, alpha = 1) => {
 };
 
 
-export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentColor }) => {
+export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentColor, description }) => {
 
     // Obtener los valores reales si son variables CSS, de lo contrario, conservar los valores originales
     const resolvedBgColorL = getCSSVariableValue(bgColorL);
@@ -54,12 +54,29 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
 
     return (
         <div className="col-md-4 col-sm-6 col-12">
-            <div className="service-card font-roboto"
-                style={styles}>
-                <h3 className='font-bold'>{cardTitle}</h3>
-                {/* <h4 style={{ fontSize: '6rem' }}>{cardIcon}</h4> */}
-                <div style={{ width: '50%', height: '100px' }} >
-                    {cardIcon}
+            <div
+                class="service-card font-roboto"
+                ontouchstart="this.classList.toggle('hover');"
+            >
+                <div class="service-card-container">
+                    <div
+                        class="front" style={styles}
+                    >
+                        <div class="inner">
+                            <h3>{cardTitle}</h3>
+                            <div>
+                                {cardIcon}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back" style={styles}>
+                        <div class="inner">
+                            <p>
+                                {description}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -28,63 +28,72 @@ export const ServicesSection = () => {
             cardIcon: <VectorShop />,
             bgColorL: colorOrange,
             bgColorR: colorPink,
-            contentColor: colorBlack
+            contentColor: colorBlack,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Diseño Web',
             cardIcon: <VectorAurea />,
             bgColorL: colorPink,
             bgColorR: colorWhite,
-            contentColor: colorPurple
+            contentColor: colorPurple,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Desarrollo Web B2B Corporativo',
             cardIcon: <VectorB2B />,
             bgColorL: colorWhite,
             bgColorR: colorPink,
-            contentColor: colorBlack
+            contentColor: colorBlack,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Soluciones E-Commerce',
             cardIcon: <VectorBrain />,
             bgColorL: colorPurple,
             bgColorR: colorPink,
-            contentColor: colorWhite
+            contentColor: colorWhite,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'SEO',
             cardIcon: <VectorArrow />,
             bgColorL: colorBlack,
             bgColorR: colorBlack,
-            contentColor: colorPink
+            contentColor: colorPink,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Creación de Marca y Re-Branding',
             cardIcon: <VectorCircles />,
             bgColorL: colorOrange,
             bgColorR: colorPink,
-            contentColor: colorBlack
+            contentColor: colorBlack,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Campañas Digitales',
             cardIcon: <VectorMagnet />,
             bgColorL: colorPink,
             bgColorR: colorWhite,
-            contentColor: colorPurple
+            contentColor: colorPurple,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Contenidos para redes sociales',
             cardIcon: <VectorCamera />,
             bgColorL: colorPurple,
             bgColorR: colorPink,
-            contentColor: colorPink
+            contentColor: colorPink,
+            description: 'Descripcion temporal para la card.'
         },
         {
             cardTitle: 'Animación digital',
             cardIcon: <VectorAnimation />,
             bgColorL: colorBlack,
             bgColorR: colorBlack,
-            contentColor: colorWhite
+            contentColor: colorWhite,
+            description: 'Descripcion temporal para la card.'
         }
     ];
 
@@ -104,6 +113,7 @@ export const ServicesSection = () => {
                             bgColorL={service.bgColorL}
                             bgColorR={service.bgColorR}
                             contentColor={service.contentColor}
+                            description={service.description}
                         />
                     )}
                 </div>
