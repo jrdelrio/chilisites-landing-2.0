@@ -17,7 +17,7 @@
         box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 
         /* Degradado de fondo */
-        background: linear-gradient(to right, #ffffff 90%, #dcb6f4 10%);
+        background: linear-gradient(135deg, #ffffff 60%, #dcb6f4 100%);
         display: flex;
         align-items: center;
         gap: 20px;
@@ -27,7 +27,7 @@
         /* Estilo del checkbox cuando está marcado */
         &:checked {
             border: none;
-            background: linear-gradient(to right, #ffffff 90%, #dcb6f4 10%);
+            background: linear-gradient(135deg, #ffffff 60%, #dcb6f4 100%);
         }
     }
 
@@ -39,7 +39,7 @@
     }
 
     span.checkmark {
-        font-size: 14px;
+        font-size: 20px;
         font-weight: bold;
         position: absolute;
         top: 45%;
