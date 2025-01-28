@@ -59,7 +59,7 @@ export const ServicesSection = () => {
             cardTitle: 'SEO',
             cardIcon: <VectorArrow />,
             bgColorL: colorBlack,
-            bgColorR: colorBlack,
+            bgColorR: colorPink,
             contentColor: colorPink,
             description: 'Descripcion temporal para la card.'
         },
@@ -91,7 +91,7 @@ export const ServicesSection = () => {
             cardTitle: 'Animación digital',
             cardIcon: <VectorAnimation />,
             bgColorL: colorBlack,
-            bgColorR: colorBlack,
+            bgColorR: colorPink,
             contentColor: colorWhite,
             description: 'Descripcion temporal para la card.'
         }

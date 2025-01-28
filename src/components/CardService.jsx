@@ -48,7 +48,7 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
     const bgR_RGBA = hexToRGBA(resolvedBgColorR, 1);
 
     const styles = {
-        background: `linear-gradient(135deg, ${bgL_RGBA} 75%, ${bgR_RGBA} 100%)`,
+        background: `linear-gradient(135deg, ${bgL_RGBA} 60%, ${bgR_RGBA} 100%)`,
         color: contentColor,
     };
 

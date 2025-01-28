@@ -35,12 +35,12 @@ export const ProjectsSection = () => {
             link: '',
             type: 'CHILISITE'
         },
-        // {
-        //     cardTitle: '<Espacio_Confluye',
-        //     image: foto,
-        //     link: '',
-        //     type: 'CHILISITE'
-        // },
+        {
+            cardTitle: '<Espacio_Confluye',
+            image: foto,
+            link: '',
+            type: 'CHILISITE'
+        },
         {
             cardTitle: '<Raimundo_DelRio_Photography',
             image: foto,
