@@ -8,7 +8,11 @@ export const ChilisitesStyledButton = ({
     backgroundColorR,
     buttonColor,
     submitting,
-    function: handleClick = () => { }
+    function: handleClick = () => { },
+    width = 200,
+    heigth = 60,
+    fontSize = 20
+
     }) => {
 
     const buttonStyle = {
@@ -16,12 +20,17 @@ export const ChilisitesStyledButton = ({
         border: `2px solid ${buttonColor}`, // Borde sólido
         boxShadow: `5px 5px 0 ${buttonColor}`, // Sombra sin blur
         color: buttonColor,
+        width: 'fit-content',
+        height: 'fit-content',
+        padding: '15px 25px',
+        fontSize: fontSize,
+        marginBottom: "30px",
     };
 
     //const formattedText = buttonText.includes('_') ? buttonText.replace(/([^_])$/, '$1_') : buttonText;
 
     return (
-        <button className="chilisites-styled-button" style={buttonStyle} onClick={handleClick}>
+        <button className="chilisites-styled-button font-roboto" style={buttonStyle} onClick={handleClick}>
             {submitting ? 'SPINNER ENVIANDO' : buttonText}
         </button>
     );

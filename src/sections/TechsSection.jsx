@@ -22,7 +22,7 @@ import awsLogo from "../img/tech-logos/aws.png";
 export const TechsSection = () => {
 
     const colorBlack = 'var(--color-black)';
-    const orangeColor = 'var(--color-orange)';
+    const colorOrange = 'var(--color-orange)';
     const colorWhite = 'var(--color-white)';
 
     const technologies = [
@@ -45,7 +45,7 @@ export const TechsSection = () => {
     return (
         <section id="techs-section" className="technologies">
             <div className="container">
-                <SectionTitle titleContent='TECNOLOGÍAS' colorBracket={orangeColor} colorTitle={colorBlack} />
+                <SectionTitle titleContent='TECNOLOGÍAS' colorBracket={colorOrange} colorTitle={colorBlack} />
                 <div className="technologies-grid">
                     {technologies.map((tech, index) => (
                         <div key={index} className="technology-item">

@@ -5,8 +5,8 @@ import "../styles/blog-section.scss";
 
 export const BlogSection = () => {
 
-    const colorPurple = 'var(--color-purple)';
-    const colorWhite = 'var(--color-white)';
+    const colorPurple = '$color-purple';
+    const colorWhite = '$color-white';
 
     return (
         <section id='blog-section'>

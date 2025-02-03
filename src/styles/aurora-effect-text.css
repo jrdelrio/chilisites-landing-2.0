@@ -17,7 +17,9 @@
 .aurora-wrapper {
     text-align: center;
     position: relative;
+    text-align: -webkit-center;
 }
+
 
 .aurora-title {
     color: transparent !important;

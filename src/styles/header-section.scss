@@ -1,0 +1,45 @@
+#header-section {
+    text-align: -webkit-center;
+    padding-bottom: 50px;
+    position: relative;
+    background: {
+        image: url("../img/bg/bg-header.png");
+        size: cover; // Hace que la imagen cubra toda la sección
+        position: center; // Centra la imagen
+        repeat: no-repeat; // Evita repeticiones
+    }
+    z-index: 1;
+    height: 100vh;
+}
+
+header {
+    h1 {
+        justify-self: center;
+        margin-bottom: 40px;
+        font-weight: 800;
+        letter-spacing: 2.2px;
+        z-index: 1;
+    }
+
+    h3 {
+        text-align: center;
+        z-index: 1;
+        width: 60%;
+        margin-bottom: 40px;
+    }
+
+    @media (width < 1000px) {
+        h3 {
+            width: 85%;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            max-width: 80%;
+
+        }
+    }
+}
+

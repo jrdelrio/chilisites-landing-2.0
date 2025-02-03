@@ -1,28 +1,50 @@
 import "../styles/footer.scss";
-
 import logoChilisites from "../img/chiliSites/logo-chilisites-b&w.png";
+import { LocationIcon } from "../img/icons/Location";
+import { WhatsappIcon } from "../img/icons/Whatsapp";
+import { MailIcon } from "../img/icons/EmailIcon";
+
 
 export const Footer = () => {
+
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        console.log(section.offsetTop)
+        if (section) {
+            window.scrollTo(0, section.offsetTop);
+        }
+    };
 
     return (
         <footer id="footer" className="font-roboto">
             <div className="logo">
-                <img src={logoChilisites} alt="chiliSites Logo" srcSet="" />
+                <button
+                    style={{ border: 'none', background: 'none' }}
+                    onClick={() => window.scrollTo(0, 0)}
+                >
+                    <img src={logoChilisites} alt="chiliSites Logo" srcSet="" />
+                </button>
                 <h4>{"<Made_in_Chile />"}</h4>
             </div>
 
             <div className="sections">
-                <a href="">Servicios</a>
-                <a href="">Proyectos</a>
-                <a href="">Sobre_Nosotros</a>
-                <a href="">Blog</a>
-                <a href="">Contacto</a>
+                <button onClick={() => scrollToSection('services-section')}>Servicios</button>
+                <button onClick={() => scrollToSection('projects-section')}>Proyectos</button>
+                <button onClick={() => scrollToSection('quotes-about-section')}>Sobre_Nosotros</button>
+                {/* <a href="">Blog</a> */}
+                <button onClick={() => scrollToSection('contact-section')}>Contacto</button>
             </div>
 
             <div className="contact">
-                <a href="">contacto@chilisites.com</a>
-                <a href="">whatsapp: </a>
-                <a href="">Nueva_Costanera 4323, Vitacura, Chile</a>
+                <a target="_blank" href="mailto:contacto@chilisites.com">
+                    <MailIcon /> contacto@chilisites.com
+                    </a>
+                <a target="_blank" href="https://wa.me/56965669585" rel="noopener noreferrer">
+                <WhatsappIcon /> Whatsapp
+                </a>
+                <a target="_blank" href="https://maps.app.goo.gl/R4WvRe5d42tDkgjz9">
+                <LocationIcon /> Nueva_Costanera 4323, Vitacura, Chile
+                </a>
             </div>
         </footer>
     )

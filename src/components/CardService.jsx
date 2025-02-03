@@ -1,4 +1,4 @@
-import "../styles/app.css";
+import "../styles/app.scss";
 
 // Función para obtener el valor de la variable CSS
 const getCSSVariableValue = (variable) => {
@@ -33,7 +33,6 @@ const hexToRGBA = (hex, alpha = 1) => {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
-
 export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentColor, description }) => {
 
     // Obtener los valores reales si son variables CSS, de lo contrario, conservar los valores originales
@@ -47,31 +46,35 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
     const bgL_RGBA = hexToRGBA(resolvedBgColorL, 1);
     const bgR_RGBA = hexToRGBA(resolvedBgColorR, 1);
 
+    const handleTouchStart = (event) => {
+        event.currentTarget.classList.toggle('hover');
+    };
+
     const styles = {
         background: `linear-gradient(135deg, ${bgL_RGBA} 60%, ${bgR_RGBA} 100%)`,
         color: contentColor,
     };
 
     return (
-        <div className="col-md-4 col-sm-6 col-12">
+        <div className="col-sm-6 col-md-6 col-lg-4 col-12">
             <div
                 className="service-card font-roboto"
-                onTouchStart="this.classList.toggle('hover');"
+                onTouchStart={handleTouchStart}
             >
                 <div className="service-card-container">
                     <div
                         className="front" style={styles}
                     >
-                        <div className="inner">
+                        <div className="inner font-bold">
                             <h3>{cardTitle}</h3>
                             <div>
-                                {cardIcon}
+                                <img src={cardIcon} />
                             </div>
                         </div>
                     </div>
 
                     <div className="back" style={styles}>
-                        <div className="inner">
+                        <div className="inner font-bold">
                             <p>
                                 {description}
                             </p>

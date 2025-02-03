@@ -7,7 +7,7 @@ import { ContactSection } from "./sections/ContactSection";
 import { TechsSection } from "./sections/TechsSection";
 import { ClientsSection } from "./sections/ClientsSection";
 
-import "../src/styles/app.css";
+import "../src/styles/app.scss";
 
 function App() {
     return (
@@ -17,7 +17,7 @@ function App() {
             <ProjectsSection />
             <QuotesAboutSection />
             <TechsSection />
-            <BlogSection />
+            {/* <BlogSection /> */}
             <ClientsSection />
             <ContactSection />
         </>

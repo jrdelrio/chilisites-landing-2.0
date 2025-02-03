@@ -1,125 +1,68 @@
-
+import { useEffect, useRef, useState } from "react";
 import { CardQuote } from "./CardQuote";
-
-import algeduc from "../img/clients-logos/algeduc.png";
-import angeladelrio from "../img/clients-logos/angeladelriopasteleria.png";
-import sieteTintas from "../img/clients-logos/sieteTintas.png";
-import decima from "../img/clients-logos/decimaPropiedades.png";
-import srodillo from "../img/clients-logos/srodillo.png";
-
+import { quotes } from "../data/quotes";
 import "../styles/slider.scss";
 
 export const Slider = () => {
+    const cardRef = useRef(null);
+    const trackRef = useRef(null);
+    const [cardWidth, setCardWidth] = useState(0);
+    const [trackGap, setTrackGap] = useState(12);
+    const [slideTrackWidth, setSlideTrackWidth] = useState(0);
 
-    const quotes = [
-        {
-            id: 1,
-            image: algeduc,
-            quote: '"Ha sido un agrado trabajar en conjunto, destaca por su compromiso y buena disposición."',
-            empresa: "ALGEDUC",
-            bgColor: "",
-            textColor: "",
-            imgAltText: "",
-        },
-        {
-            id: 2,
-            image: angeladelrio,
-            quote: '"Desde nuestra primera reunión demostraron mucho profesionalismo y creatividad, al poco tiempo ya sus estrategias empezaron a dar frutos visibles."',
-            empresa: "ANGELA DEL RIO PASTELERÍA",
-            bgColor: "",
-            textColor: "",
-            imgAltText: "",
-        },
-        // {
-        //     id: 3,
-        //     image: kado,
-        //     quote: '"---El equipo de esta empresa es muy atento y siempre dispuesto a ayudar. Sin duda, seguiremos colaborando con ellos."',
-        //     empresa: "KADÓ REGALOS",
-        //     bgColor: "",
-        //     textColor: "",
-        //     imgAltText: "",
-        // },
-        {
-            id: 4,
-            image: sieteTintas,
-            quote: '"Estamos muy contentos trabajando con ellos. Disposición siempre excelente y cada duda que tenemos o necesitamos una solución, están para aconsejarnos. Vamos creciendo!"',
-            empresa: "SIETE TINTAS",
-            bgColor: "",
-            textColor: "",
-            imgAltText: "",
-        },
-        // {
-        //     id: 5,
-        //     image: alterOffice,
-        //     quote: '"---La calidad del trabajo que entregan es excepcional. Nos han ayudado a alcanzar nuestros objetivos en tiempo récord."',
-        //     empresa: "ALTER OFFICE",
-        //     bgColor: "",
-        //     textColor: "",
-        //     imgAltText: "",
-        // },
-        // {
-        //     id: 6,
-        //     image: meydey,
-        //     quote: '"--Nos sorprendió gratamente la innovación que aportaron a nuestro proyecto. Son expertos en lo que hacen."',
-        //     empresa: "MEY DEY",
-        //     bgColor: "",
-        //     textColor: "",
-        //     imgAltText: "",
-        // },
-        // {
-        //     id: 7,
-        //     image: dodo,
-        //     quote: '"--La creatividad y dedicación de su equipo nos permitió lanzar una campaña muy exitosa. Los recomendamos ampliamente."',
-        //     empresa: "DODO",
-        //     bgColor: "",
-        //     textColor: "",
-        //     imgAltText: "",
-        // },
-        {
-            id: 8,
-            image: decima,
-            quote: '"Hemos tenido una excelente experiencia, demostraron compromiso, creatividad y profesionalismo, lanzando campañas que aumentaron nuestros clientes."',
-            empresa: "DÉCIMA PROPIEDADES",
-            bgColor: "",
-            textColor: "",
-            imgAltText: "",
-        },
-        {
-            id: 9,
-            image: srodillo,
-            quote: '"Me ayudaron diseñando y montando mi sitio web de manera muy efectiva. Llegué con ideas y me llevé soluciones al poco tiempo. Muy recomendado para cualquier proyecto web!"',
-            empresa: "SEBASTIÁN RODILLO DESIGNER",
-            bgColor: "",
-            textColor: "",
-            imgAltText: "",
-        },
-    ];
+    console.log(quotes.length);
+    console.log(trackGap);
+
+    useEffect(() => {
+        const width = (280 * quotes.length + (trackGap * (quotes.length - 1))) * 2 + 12;
+        console.log("El ancho del slider es de: ", width);
+        setSlideTrackWidth(width);
+    }, [quotes, trackGap]);
+
+
+
+
+    // useEffect(() => {
+    //     if (cardWidth) {
+    //         console.log(`Cada slide mide ${cardWidth}px`);
+    //         console.log(`Hay ${quotes.length} slides`)
+    //         console.log(`El espacio entre slides es de ${trackGap}px`)
+    //         console.log(`El slider mide ${cardWidth * quotes.length + (trackGap * (quotes.length - 1))}px`);
+    //     }
+    // }, [cardWidth, trackGap]);
 
     return (
         <div className="slider">
-            <div className="slide-track">
-                {quotes.map((quote) => (
+            <div className="slide-track" style={{
+                width:
+                    slideTrackWidth ? `${slideTrackWidth}px`
+                        : "auto"
+            }}>
+                {quotes.map((quote, index) => (
                     <CardQuote
                         key={quote.id}
+                        ref={index === 0 ? cardRef : null}
                         id={quote.id}
                         image={quote.image}
                         quote={quote.quote}
                         empresa={quote.empresa}
                         textColor={quote.textColor}
                         bgColor={quote.bgColor}
+                        bgColorDecor={quote.bgColorDecor}
                         imgAltText={quote.imgAltText}
                     />
 
                 ))}
-                {quotes.map((quote) => (
+                {quotes.map((quote, index) => (
                     <CardQuote
-                        key={quote.id}
+                        key={`${quote.id} _duplicado`}
                         id={quote.id}
                         image={quote.image}
                         quote={quote.quote}
                         empresa={quote.empresa}
                         textColor={quote.textColor}
                         bgColor={quote.bgColor}
+                        bgColorDecor={quote.bgColorDecor}
                         imgAltText={quote.imgAltText}
                     />
                 ))}

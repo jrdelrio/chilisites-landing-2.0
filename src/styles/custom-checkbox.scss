@@ -1,3 +1,5 @@
+@import './app.scss';
+
 .checkbox-container {
     display: flex;
     align-items: center;
@@ -52,8 +54,9 @@
     /* Ajustar la alineación del label */
     label {
         margin-left: 8px;
-        font-size: 14px;
+        font-size: 20px;
         font-weight: bold;
-        color: var(--color-black);
+        // color: $color-black;
+        color: $color-black;
     }
 }

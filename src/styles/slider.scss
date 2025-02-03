@@ -1,4 +1,4 @@
-@import "./app.css";
+@import "./app.scss";
 
 .slider {
     background: transparent;
@@ -6,83 +6,94 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     // border-radius: 10px;
 
     &::after {
         right: 0;
         top: 0;
+       
         transform: rotateZ(180deg);
     }
 
     &::before {
         left: 0;
         top: 0;
+        
     }
 
     // Para futuros efectos de gradientes
     &::before,
     &::after {
-        background: linear-gradient(to right, rgba(138, 43, 226, 1) 0%, rgba(138, 43, 226, 0) 100%);
+        background: linear-gradient(
+            to right,
+            rgba(138, 43, 226, 1) 0%,
+            rgba(138, 43, 226, 0) 100%
+        );
         content: "";
-        height: 300px;
+        height: 100%;
         position: absolute;
         width: 100px;
         z-index: 2;
     }
-}
 
-.slide-track {
-    display: flex;
-    animation: scroll 40s linear infinite;
-    -webkit-animation: scroll 40s linear infinite;
-    width: calc(500px * 10);
+    .slide-track {
+        display: flex;
+        gap: 12px;
+        animation: scroll 40s linear infinite;
+        -webkit-animation: scroll 20s linear infinite;
 
-}
-
-.slide {
-    height: fit-content;
-    max-width: 48vw;
-    margin: 0 15px;
-    border-radius: 10px;
-    background-color: var(--light-purple);
-    text-align-last: center;
-}
-
-@keyframes scroll {
-    0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-
-    100% {
-        -webkit-transform: translateX(calc(-500px * 5));
-        transform: translateX(calc(-500px * 5));
-    }
-}
-
-// Media queries
-@media (width < 575.98px) {
-    .slider {
-        &::before,
-        &::after {
-            width: 80px;
+        .slide {
+            margin: 0;
+            border-radius: 10px;
+            text-align-last: center;
+            width: 280px;
         }
     }
 
-    .max-width-sm-90vw {
-        max-width: 90vw;
-        margin: auto !important;
+    @keyframes scroll {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        100% {
+            -webkit-transform: translateX(calc(-280px * 13 - 12px * 12));
+            transform: translateX(calc(-280px * 13 - 12px * 12));
+
+        }
     }
-}
 
-@media (min-width: 576px) and (max-width: 991.98px) {
-    // Agregar estilos específicos para tablet si es necesario
-}
+    /* Media queries */
+    @mixin mobile {
+        @media (width <= 575.98px) {
+            @content;
+        }
+    }
 
-@media (min-width: 992px) {
-    .max-width-lg-85vw {
-        max-width: 85vw;
-        margin: auto !important;
+    @mixin tablet {
+        @media (576px < width < 991.98px) {
+            @content;
+        }
+    }
+
+    @mixin desktop {
+        @media (992px <= width) {
+            @content;
+        }
+    }
+
+
+
+
+    // Media queries
+    @include mobile {
+        .slide-track .slide {
+            width: 180px;
+        }
+    }
+
+    @include desktop {
+       
     }
 }

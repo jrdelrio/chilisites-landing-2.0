@@ -3,13 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { CardProject } from "../components/CardProject";
 import { SectionTitle } from "../components/SectionTitle";
 
-import "../styles/projects-section.scss";
+import { projects } from "../data/proyects";
 
-import foto from "../img/10430812.jpg";
-import espacioConfluye from "../img/projects/espacio-confluye.jpg";
-import victoriaMaldonado from "../img/projects/victoria-maldonado.jpg";
-import angelaDelrio from "../img/projects/angela-delrio.jpg";
-import sebastianRodillo from "../img/projects/sebastian-rodillo.jpg";
+import "../styles/projects-section.scss";
 
 export const ProjectsSection = () => {
 
@@ -19,57 +15,6 @@ export const ProjectsSection = () => {
 
     const colorBracket = 'var(--color-orange)';
     const colorContent = 'var(--color-black)';
-
-    const projects = [
-        {
-            cardTitle: '<Kadó_Regalos',
-            image: foto,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Angela_delRio_Pasteleria',
-            image: angelaDelrio,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Victoria_Maldonado_Ruiz',
-            image: victoriaMaldonado,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Décima_Propiedades',
-            image: foto,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Espacio_Confluye',
-            image: espacioConfluye,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Raimundo_DelRio_Photography',
-            image: foto,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<LID_Security',
-            image: foto,
-            link: '',
-            type: 'CHILISITE'
-        },
-        {
-            cardTitle: '<Sebastián_Rodillo_Profile',
-            image: sebastianRodillo,
-            link: '',
-            type: 'CHILISITE'
-        }
-    ];
 
 
 
@@ -85,16 +30,12 @@ export const ProjectsSection = () => {
 
     //crea una funcion que devuelva el alto y ancho de cada <CardProject />
     useEffect(() => {
-        console.log('dentro de useEffect')
         if (cardRef.current) {
             const { width, height } = cardRef.current.getBoundingClientRect();
             setCardSize({ width, height });
         }
     }, []);
 
-    useEffect(()=> {
-        console.log(cardSize)
-    })
 
     return (
         <section id="projects-section">
@@ -114,14 +55,15 @@ export const ProjectsSection = () => {
                             cardTitle={project.cardTitle}
                             image={project.image}
                             type={project.type}
+                            link={project.link}
                             ref={index == 0 ? cardRef : null}
                         />
                     )}
                 </div>
             </div>
             <h3 className="mt-5">
-                <a className='color-purple link-all-projects' onClick={toggleShowAll}>
-                    {showAll ? "<Ver menos proyectos />" : "<Ver todos los proyectos />"}
+                <a className='color-purple link-all-projects font-roboto' onClick={toggleShowAll}>
+                    {showAll ? "<Ver_menos_proyectos />" : "<Ver_todos_los_proyectos />"}
                 </a>
             </h3>
         </section>

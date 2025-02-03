@@ -1,4 +1,4 @@
-@import "app.css";
+@import "app.scss";
 
 .project-card {
     border-radius: 20px;
@@ -30,14 +30,14 @@
         position: relative;
         left: 10px;
         margin-top: 8px;
-        color: var(--color-black);
+        color: $color-black;
 
         &::before {
             content: "{";
             position: absolute;
             bottom: 20px;
             left: -6px;
-            color: var(--color-orange);
+            color: $color-orange;
         }
 
         @media (max-width: 770px) {
@@ -51,7 +51,7 @@
 
     h4 {
         font-size: 20px;
-        color: var(--color-white);
+        color: $color-white;
         text-transform: uppercase;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
@@ -100,7 +100,7 @@
     transform: translate(-50%, -50%);
     font-size: 30px;
     font-weight: bold;
-    color: var(--color-white);
+    color: $color-white;
     text-decoration: none;
     opacity: 0;
     cursor: pointer;

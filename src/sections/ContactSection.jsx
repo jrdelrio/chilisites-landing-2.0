@@ -17,8 +17,9 @@ export const ContactSection = () => {
     const colorBlack = 'var(--color-black)';
     const colorOrange = 'var(--color-orange)';
     const colorPink = 'var(--color-pink)';
+    const colorWhite = 'var(--color-white)';
 
-   
+
 
     const emptyForm = {
         name: '',
@@ -43,6 +44,7 @@ export const ContactSection = () => {
     }
 
     const handleCheckboxChange = (checked) => {
+        console.log('checkbox clicked!');
         setIsChecked(checked);
         setFormData(prevState => ({
             ...prevState,
@@ -141,10 +143,28 @@ export const ContactSection = () => {
 
     useEffect(() => {
         console.log(formData)
-    }, [formData])
+    }, [formData]);
+
+    useEffect(() => {
+        (function () {
+            emailjs.init({ publicKey: "service_eknlyzc" });
+        })();
+    }, []);
 
     return (
         <section id='contact-section' className="font-roboto">
+
+            <div className="gradient-bg">
+                <div className="gradients-container">
+                    <div className="g1"></div>
+                    <div className="g2"></div>
+                    <div className="g3"></div>
+                    <div className="g4"></div>
+                    <div className="g5"></div>
+                </div>
+            </div>
+
+
             <div className="container">
                 <SectionTitle titleContent='CONTÁCTANOS' colorTitle={colorBlack} colorBracket={colorPurple} />
                 <form action="">
@@ -160,13 +180,15 @@ export const ContactSection = () => {
 
                     <div className="row-email-phone">
                         <input
-                            type="phone"
+                            type="tel"
                             value={formData.phone}
                             placeholder="<Teléfono />"
                             id="form-phone"
                             name="phone"
+                            pattern="9 [0-9]{4}-[0-9]{4}"
                             onChange={handleChange}
                         />
+
                         <input
                             type="email"
                             value={formData.email}
@@ -196,8 +218,8 @@ export const ContactSection = () => {
                     </textarea>
 
                     <CustomCheckbox
-                        checkColor="#573AE7"
-                        bgColor="linear-gradient(to right, #FFFFFF 90%, #DCB6F4 10%)"
+                        checkColor={colorPurple}
+                        bgColor={`linear-gradient(to right, ${colorWhite} 90%, ${colorPink} 10%)`}
                         labelText="<Suscribirse_al_newsletter/>"
                         size={15}
                         isChecked={isChecked}
@@ -208,7 +230,7 @@ export const ContactSection = () => {
                         <ChilisitesStyledButton
                             function={handleSubmit}
                             buttonText='<Enviar/>'
-                            buttonColor='var(--color-black)'
+                            buttonColor={colorBlack}
                             backgroundColorL={colorOrange}
                             backgroundColorR={colorPink}
                             submitting={submitting}
@@ -223,10 +245,10 @@ export const ContactSection = () => {
                 type="text/javascript"
                 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
             ></script>
-            <script type="text/javascript">
+            {/* <script type="text/javascript">
                 (function () {
                     emailjs.init({ publicKey: "service_eknlyzc" })})();
-            </script>
+            </script> */}
         </section>
     )
 }

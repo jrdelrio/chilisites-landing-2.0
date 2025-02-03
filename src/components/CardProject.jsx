@@ -16,7 +16,7 @@ export const CardProject = forwardRef(({ cardTitle, image, link, type }, ref) =>
                     </div> */}
             </div>
             <h3>{cardTitle}</h3>
-            <a href={link} className="project-link">{'<Ver_Proyecto>'}</a>
+            <a target="_blank" href={link} className="project-link">{'<Ver_Proyecto>'}</a>
         </div>
     )
 })

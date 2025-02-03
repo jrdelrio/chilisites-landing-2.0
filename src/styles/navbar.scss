@@ -37,7 +37,7 @@ nav.navbar {
     }
 
     .navbar-toggler {
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 5px;
         padding: 5px;
         outline: none !important;
@@ -53,6 +53,7 @@ nav.navbar {
             height: 3px;
             background-color: black;
             display: block;
+            filter: invert(1);
 
             &::before,
             &::after {
@@ -85,7 +86,7 @@ nav.navbar {
         }
 
         .navbar-toggler {
-            border-color: black;
+            border-color: white;
         }
 
         .navbar-toggler-icon {

@@ -1,9 +1,14 @@
-@import "./app.css";
+@import "./app.scss";
 
 #quotes-about-section {
     background-color: blueviolet;
     padding-top: 80px;
     padding-bottom: 50px;
+
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
 
     .content-center {
         justify-items: center;
@@ -11,24 +16,38 @@
         button {
             margin: auto;
         }
-
-        .quotes {
-            border: 1px solid blue;
-        }
     }
 
     p {
         span {
-            color: var(--color-orange);
+            color: $color-orange;
         }
     }
 
     .about-us {
+        p {
+            font-size: 1.75rem;
+            @include desktop {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
         @media (width < 500px) {
             & > p {
+                font-size: 1.2rem;
                 padding-left: 15px;
                 width: 90%;
             }
         }
     }
+}
+
+// Media queries
+@include mobile {
+    .slide-track .slide {
+        width: 180px;
+    }
+}
+
+@include desktop {
 }

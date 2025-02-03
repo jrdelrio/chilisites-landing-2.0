@@ -1,0 +1,18 @@
+/* Media queries */
+@mixin mobile {
+    @media (width <= 575.98px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (576px < width < 991.98px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (992px <= width) {
+        @content;
+    }
+}

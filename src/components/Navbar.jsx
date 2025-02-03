@@ -1,10 +1,17 @@
 import { ContactButton } from "./ContactButton";
-
 import chiliSitesLogo from "../img/chiliSites/logo-chilisites-fondo-solido.png";
-
 import "../styles/navbar.scss";
 
 export const Navbar = () => {
+
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        console.log(section.offsetTop)
+        if (section) {
+            window.scrollTo(0, section.offsetTop);
+        }
+    };
+
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container d-flex align-items-center justify-content-between">
@@ -13,20 +20,37 @@ export const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse justify-content-center font-roboto" id="navbarsExample07">
+                <div className="collapse navbar-collapse justify-content-center font-roboto font-bold" id="navbarsExample07">
                     <ul className="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
                         <li className="nav-item">
-                            <a className="nav-link text-white" aria-current="page" href="">Servicios</a>
+                            <button
+                                className="nav-link text-white"
+                                onClick={() => scrollToSection('services-section')}
+                            >
+                                Servicios
+                            </button>
                         </li>
+
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="">Proyectos</a>
+                            <button
+                                className="nav-link text-white"
+                                onClick={() => scrollToSection('projects-section')}
+                            >
+                                Proyectos
+                            </button>
                         </li>
+
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="">Sobre Nosotros</a>
+                            <button
+                                className="nav-link text-white"
+                                onClick={() => scrollToSection('quotes-about-section')}
+                            >
+                                Sobre Nosotros
+                            </button>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link text-white" href="">Blog</a>
-                        </li>
+                        {/* <li className="nav-item">
+                            <a className="nav-link text-white" onClick={() => scrollToSection('blog-section')}>Blog</a>
+                        </li> */}
                         <li className="nav-item">
                             <ContactButton />
                         </li>

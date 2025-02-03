@@ -1,4 +1,4 @@
-@import "../styles/app.css";
+@import "../styles/app.scss";
 
 #footer {
     background-color: black;
@@ -29,24 +29,45 @@
             padding-left: 8px;
             transition: color .2s ease, scale .2s ease;
 
+            &:hover,
+            &:hover svg {
+                color: $color-pink;
+                scale: 1.05;
+            }
+        }
+
+        button {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            transition: color .2s ease, scale .2s ease;
+
             &:hover {
-                color: var(--color-pink);
+                color: $color-pink;
                 scale: 1.05;
             }
         }
 
         &::before {
             content: "{";
-            color: var(--color-orange);
+            color: $color-orange;
         }
     }
 
     @media (width <= 768px) {
         display: block;
         padding-left: 60px;
+        padding-right: 10%;
 
         & > * {
             margin-bottom: 20px;
+        }
+
+        .contact {
+            a {
+                margin-bottom: 8px;
+            }
         }
     }
 }

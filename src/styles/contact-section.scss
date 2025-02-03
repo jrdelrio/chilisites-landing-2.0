@@ -1,11 +1,146 @@
-@import "app.css";
+@import "app.scss";
+
+// Colors
+$colors: (
+    bg1: #dff9fb,
+    bg2: #ffffff,
+    color1: rgb(104, 109, 224),
+    color2: rgb(126, 214, 223),
+    color3: rgb(223, 249, 251),
+    color4: rgb(255, 121, 121),
+    color5: rgb(149, 175, 192),
+);
+
+$animations: (
+    color1: moveVertical 10s ease infinite,
+    color2: moveInCircle 10s reverse infinite,
+    color3: moveInCircle 10s linear infinite,
+    color4: moveHorizontal 10s ease infinite,
+    color5: moveInCircle 10s ease infinite,
+);
+
+// Other variables
+$circle-size: 200%;
+$blending: hard-light;
+
+// 🎬 Mixin for Keyframes
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@include keyframes(moveInCircle) {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@include keyframes(moveVertical) {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@include keyframes(moveHorizontal) {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
 
 #contact-section {
+    position: relative;
     padding-bottom: 50px;
+    padding-top: 180px;
 
-    @media (width < 500px) {
-        form {
-            margin-left: 15px !important;
+    .gradient-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            40deg,
+            map-get($colors, bg1),
+            map-get($colors, bg2)
+        );
+
+        z-index: -1;
+        overflow: hidden;
+
+        // mask-image: linear-gradient(
+        //     to bottom,
+        //     $color-white 0%,
+        //     rgba($color-white, 0) 30px
+        // );
+        // -webkit-mask-image: linear-gradient(
+        //     to bottom,
+        //     $color-white 0%,
+        //     rgba($color-white, 0) 30px
+        // );
+
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            $color-white 240px
+        );
+
+        .gradients-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: url(#goo) blur(40px);
+
+            @each $key,
+                $rgb
+                    in (
+                        1: map-get($colors, color1),
+                        2: map-get($colors, color2),
+                        3: map-get($colors, color3),
+                        4: map-get($colors, color4),
+                        5: map-get($colors, color5)
+                    )
+            {
+                .g#{$key} {
+                    position: absolute;
+                    width: $circle-size;
+                    height: $circle-size;
+                    background: radial-gradient(
+                        circle at center,
+                        rgba($rgb, 0.8) 0%,
+                        rgba($rgb, 0) 50%
+                    );
+                    mix-blend-mode: $blending;
+
+                    animation: map-get($animations, color#{$key});
+                }
+            }
         }
     }
 
@@ -13,22 +148,14 @@
         width: 70%;
         margin: auto;
 
-        @media (width < 500px) {
-            width: 90%;
-        }
-
         h4 {
-            color: var(--color-black);
+            color: $color-black;
             margin-bottom: 0;
             padding: 0px 0 20px 20px;
             width: fit-content;
             white-space: nowrap; // Asegura que el texto esté siempre en una línea
             overflow: hidden; // Previene desbordamiento visual
             text-overflow: ellipsis; // Agrega puntos suspensivos si el texto es muy largo
-
-            @media (width < 500px) {
-                font-size: 16px;
-            }
         }
 
         input,
@@ -38,13 +165,9 @@
             display: block;
             outline: none;
             width: 100%;
-            background-color: var(--color-gray-1);
+            background-color: rgba($color-gray-1, 0.3);
             margin-bottom: 15px;
             border-radius: 10px;
-            // border: blue 1px solid;
-
-            @media (width < 500px) {
-            }
 
             &:focus-visible {
                 border: none;
@@ -56,12 +179,8 @@
             &::-moz-placeholder,
             &:-ms-input-placeholder,
             &:-moz-placeholder {
-                color: var(--color-black);
+                color: map-get($colors, color-1);
                 opacity: 1;
-
-                @media (screen < 500px) {
-                    font-size: 14px;
-                }
             }
         }
 
@@ -88,19 +207,8 @@
             display: flex;
             justify-content: flex-start;
 
-            @media (width < 500px) {
-                display: block;
-
-                input[type=phone] {
-                    margin-left: 0;
-                }
-            }
-
             input[type="phone"] {
                 width: 50%;
-                @media (width < 500px) {
-                    width: 100%;
-                }
             }
         }
 
@@ -119,7 +227,7 @@
         margin-top: 30px;
         font-size: 18px;
         font-weight: bold;
-        color: var(--color-purple);
+        color: map-get($colors, color-1);
 
         &.visible {
             opacity: 1;
@@ -131,6 +239,41 @@
         &.hidden {
             opacity: 0;
             color: rgba(87, 58, 231, 0);
+        }
+    }
+
+    @media (width < 500px) {
+        form {
+            width: 90%;
+            margin-left: 15px !important;
+
+            h4 {
+                font-size: 16px;
+            }
+
+            input,
+            textarea {
+                &::placeholder,
+                &::-webkit-input-placeholder,
+                &::-moz-placeholder,
+                &:-ms-input-placeholder,
+                &:-moz-placeholder {
+                    font-size: 14px;
+                }
+            }
+
+            input[name="email"] {
+                margin-left: 0;
+            }
+
+            .row-email-phone {
+                display: block;
+
+                input[type="tel"] {
+                    width: 100%;
+                    margin-left: 0;
+                }
+            }
         }
     }
 }
