@@ -67,7 +67,7 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
                     >
                         <div className="inner font-bold">
                             <h3>{cardTitle}</h3>
-                            <div>
+                            <div className="icon-container">
                                 <img src={cardIcon} />
                             </div>
                         </div>

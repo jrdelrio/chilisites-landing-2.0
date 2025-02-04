@@ -10,14 +10,14 @@ export const Slider = () => {
     const [trackGap, setTrackGap] = useState(12);
     const [slideTrackWidth, setSlideTrackWidth] = useState(0);
 
-    console.log(quotes.length);
-    console.log(trackGap);
+    // console.log(quotes.length);
+    // console.log(trackGap);
 
-    useEffect(() => {
-        const width = (280 * quotes.length + (trackGap * (quotes.length - 1))) * 2 + 12;
-        console.log("El ancho del slider es de: ", width);
-        setSlideTrackWidth(width);
-    }, [quotes, trackGap]);
+    // useEffect(() => {
+    //     const width = (280 * quotes.length + (trackGap * (quotes.length - 1))) * 2 + 12;
+    //     console.log("El ancho del slider es de: ", width);
+    //     setSlideTrackWidth(width);
+    // }, [quotes, trackGap]);
 
 
 

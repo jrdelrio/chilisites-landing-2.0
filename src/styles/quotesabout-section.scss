@@ -25,6 +25,10 @@
     }
 
     .about-us {
+        @include mobile {
+            padding: 0 5vw;
+        }
+
         p {
             font-size: 1.75rem;
             @include desktop {

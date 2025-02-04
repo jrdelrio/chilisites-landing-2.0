@@ -23,7 +23,7 @@ export const ProjectsSection = () => {
     };
 
     const maxHeight = {
-        maxHeight: showAll ? "10000px" : 2 * cardSize.height + 40,
+        maxHeight: showAll ? "10000px" : 2 * cardSize.height,
         overflow: "hidden",
         transition: "max-height 2s ease",
     }
