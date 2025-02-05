@@ -45,7 +45,7 @@ export const QuotesAboutSection = () => {
                     <p className="color-white font-roboto">
                         Nos apasiona trabajar contigo en cada paso, enfocándonos en resultados claros que hagan <span>crecer tu negocio</span> de forma estratégica y sostenible. Nuestro objetivo es que tu marca
                         destaque, convierta más y crezca inteligentemente. <span>¡Vamos a hacerlo juntos!</span> <br />
-                        <span>//</span>
+                        <span>{'//'}</span>
                     </p>
                 </div>
             </div>

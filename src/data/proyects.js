@@ -1,4 +1,3 @@
-import foto from "../img/10430812.jpg";
 import espacioConfluye from "../img/projects/espacio-confluye.jpg";
 import victoriaMaldonado from "../img/projects/victoria-maldonado.jpg";
 import angelaDelrio from "../img/projects/angela-delrio.jpg";

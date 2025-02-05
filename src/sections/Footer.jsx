@@ -36,13 +36,13 @@ export const Footer = () => {
             </div>
 
             <div className="contact">
-                <a target="_blank" href="mailto:contacto@chilisites.com">
+                <a target="_blank" href="mailto:contacto@chilisites.com" rel="noopener noreferrer">
                     <MailIcon /> contacto@chilisites.com
                     </a>
                 <a target="_blank" href="https://wa.me/56965669585" rel="noopener noreferrer">
                 <WhatsappIcon /> Whatsapp
                 </a>
-                <a target="_blank" href="https://maps.app.goo.gl/R4WvRe5d42tDkgjz9">
+                <a target="_blank" href="https://maps.app.goo.gl/R4WvRe5d42tDkgjz9" rel="noopener noreferrer">
                 <LocationIcon /> Nueva_Costanera 4323, Vitacura, Chile
                 </a>
             </div>

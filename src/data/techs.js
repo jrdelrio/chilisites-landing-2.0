@@ -1,9 +1,3 @@
-import { SectionTitle } from "../components/SectionTitle";
-import AOS from 'aos';
-// import 'aos/dist/aos.css';
-import "../styles/techs-section.scss";
-import { TechItem } from "../components/TechItem";
-
 // Importación de imágenes de logos de tecnologías
 import reactLogo from "../img/tech-logos/react.png";
 import cssLogo from "../img/tech-logos/css.png";
@@ -20,7 +14,7 @@ import elementorLogo from "../img/tech-logos/elementor.png";
 import googleAdsLogo from "../img/tech-logos/google-ads.png";
 import awsLogo from "../img/tech-logos/aws.png";
 
-const technologies = [
+export const technologies = [
     { tech: "React", img: reactLogo },
     { tech: "CSS3", img: cssLogo },
     { tech: "Python", img: pythonLogo },
@@ -36,24 +30,3 @@ const technologies = [
     { tech: "Google Ads", img: googleAdsLogo },
     { tech: "Amazon Web Service", img: awsLogo }
 ];
-
-
-export const TechsSection = () => {
-
-    const colorBlack = 'var(--color-black)';
-    const colorOrange = 'var(--color-orange)';
-
-
-    return (
-        <section id="techs-section" className="technologies">
-            <div className="container">
-                <SectionTitle titleContent='TECNOLOGÍAS' colorBracket={colorOrange} colorTitle={colorBlack} />
-                <div className="technologies-grid">
-                    {technologies.map((tech, index) => (
-                        <TechItem tech={tech} key={index} index={index}/>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};

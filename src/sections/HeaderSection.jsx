@@ -1,19 +1,20 @@
 import { AuroraEffectText } from '../components/AuroraEffectText';
 import { Navbar } from '../components/Navbar';
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter';
+import { motion } from "motion/react";
 
 import "../styles/header-section.scss";
+
+import macbookMockup from '../img/gif/macbook-mockup.gif';
+import iphoneMockup from '../img/gif/iphone-mockup.gif';
 
 export const HeaderSection = () => {
 
     const styles = {
-        height: '330px',
-        // width: 'clamp(400px, 80%, 800px)',
-        width: '80%',
-        margin: '20px auto 0 auto',
 
+        // border: '1px solid white',
         // temporal
-        backgroundColor: 'black',
+
         color: "white"
     };
 
@@ -23,20 +24,39 @@ export const HeaderSection = () => {
     return (
         <header id='header-section'>
             <Navbar />
-            <h1 className='color-white font-titillium'>Transforma tu sitio web en un</h1>
-            {/* <h1 className='color-white font-titillium'>El ingrediente secreto para tu éxito online</h1> */}
+            <h1 className='color-white font-titillium'>Aumenta tu visibilidad con</h1>
             <AuroraEffectText text='CHILISITES' />
+
+            
             <h3 className='color-white font-roboto'>
-                <Typewriter 
-                words={typeWriterText}
-                typeSpeed={50}
-                loop={1}
-                cursor={false}
-                
+                <Typewriter
+                    words={typeWriterText}
+                    typeSpeed={50}
+                    loop={1}
+                    cursor={false}
+
                 />
             </h3>
-            <div style={styles}>
-                aqui van los mockups
+
+            <div style={styles} className='mockups'>
+
+                <motion.img
+                    src={iphoneMockup}
+                    alt="mockup-iphone"
+                    initial={{ y: -500, opacity: 0 }} // Inicia fuera de la pantalla, arriba
+                    // animate={{ x: -270, y: 90, opacity: 1 }}
+                    animate={{ y: 90, opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                />
+
+                <motion.img
+                    src={macbookMockup}
+                    alt="mockup-macbook"
+                    initial={{ x: "100vw", opacity: 0 }} // Inicia fuera de la pantalla, a la derecha
+                    animate={{ x: 160, opacity: 1 }} // Anima hacia su posición final
+                    transition={{ duration: 1.5, ease: "easeInOut" }} // Duración y tipo de animación
+                />
+
             </div>
 
         </header>

@@ -15,8 +15,12 @@ nav.navbar {
         }
     }
 
+    .collapse.navbar-collapse {
+        transform: translateX(5%);
+    }
+
     ul {
-        gap: 5.5rem;
+        gap: 8rem;
 
         li {
             transition: scale 0.2s ease;

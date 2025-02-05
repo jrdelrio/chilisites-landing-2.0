@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
 import { SectionTitle } from "../components/SectionTitle"
 import { CustomCheckbox } from "../components/CustomCheckbox";
-
 import "../styles/contact-section.scss";
 
 import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
+
+    const elementoRef = useRef(null);
 
     const [isChecked, setIsChecked] = useState(false);
     const [submitting, setSubmitting] = useState(false);
@@ -151,104 +152,106 @@ export const ContactSection = () => {
         })();
     }, []);
 
-    return (
-        <section id='contact-section' className="font-roboto">
 
-            <div className="gradient-bg">
-                <div className="gradients-container">
-                    <div className="g1"></div>
-                    <div className="g2"></div>
-                    <div className="g3"></div>
-                    <div className="g4"></div>
-                    <div className="g5"></div>
+return (
+    <section id='contact-section' className="font-roboto">
+
+        <div className="gradient-bg">
+            <div className="gradients-container">
+                <div className="g1"></div>
+                <div className="g2"></div>
+                <div className="g3"></div>
+                <div className="g4"></div>
+                <div className="g5"></div>
+            </div>
+        </div>
+
+
+        <div className="container">
+            <SectionTitle titleContent='CONTÁCTANOS' colorTitle={colorBlack} colorBracket={colorPurple} />
+            <form action="">
+                <h4 className="font-bold">{'<Listo_para_el_siguiente_paso?>'}</h4>
+                <input
+                    ref={elementoRef}
+                    type="text"
+                    value={formData.name}
+                    placeholder="<Nombre_completo />"
+                    id="form-name"
+                    name="name"
+                    onChange={handleChange}
+                />
+
+                <div className="row-email-phone">
+                    <input
+                        type="tel"
+                        value={formData.phone}
+                        placeholder="<Teléfono />"
+                        id="form-phone"
+                        name="phone"
+                        pattern="9 [0-9]{4}-[0-9]{4}"
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        type="email"
+                        value={formData.email}
+                        placeholder="<Correo />"
+                        id="form-email"
+                        name="email"
+                        onChange={handleChange}
+                    />
                 </div>
-            </div>
 
+                <input
+                    type="text"
+                    value={formData.type}
+                    placeholder="<Tipo_de_Proyecto />"
+                    id="form-project-type"
+                    name="type"
+                    onChange={handleChange}
+                />
 
-            <div className="container">
-                <SectionTitle titleContent='CONTÁCTANOS' colorTitle={colorBlack} colorBracket={colorPurple} />
-                <form action="">
-                    <h4 className="font-bold">{'<Listo_para_el_siguiente_paso?>'}</h4>
-                    <input
-                        type="text"
-                        value={formData.name}
-                        placeholder="<Nombre_completo />"
-                        id="form-name"
-                        name="name"
-                        onChange={handleChange}
+                <textarea
+                    value={formData.message}
+                    placeholder="<Mensaje />"
+                    id="form-message"
+                    name="message"
+                    onChange={handleChange}
+                >
+                </textarea>
+
+                <CustomCheckbox
+                    checkColor={colorPurple}
+                    bgColor={`linear-gradient(to right, ${colorWhite} 90%, ${colorPink} 10%)`}
+                    labelText="<Suscribirse_al_newsletter/>"
+                    size={15}
+                    isChecked={isChecked}
+                    onCheckboxChange={handleCheckboxChange}
+                />
+
+                <div className="content-center">
+                    <ChilisitesStyledButton
+                        function={handleSubmit}
+                        buttonText='<Enviar/>'
+                        buttonColor={colorBlack}
+                        backgroundColorL={colorOrange}
+                        backgroundColorR={colorPink}
+                        submitting={submitting}
                     />
-
-                    <div className="row-email-phone">
-                        <input
-                            type="tel"
-                            value={formData.phone}
-                            placeholder="<Teléfono />"
-                            id="form-phone"
-                            name="phone"
-                            pattern="9 [0-9]{4}-[0-9]{4}"
-                            onChange={handleChange}
-                        />
-
-                        <input
-                            type="email"
-                            value={formData.email}
-                            placeholder="<Correo />"
-                            id="form-email"
-                            name="email"
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <input
-                        type="text"
-                        value={formData.type}
-                        placeholder="<Tipo_de_Proyecto />"
-                        id="form-project-type"
-                        name="type"
-                        onChange={handleChange}
-                    />
-
-                    <textarea
-                        value={formData.message}
-                        placeholder="<Mensaje />"
-                        id="form-message"
-                        name="message"
-                        onChange={handleChange}
-                    >
-                    </textarea>
-
-                    <CustomCheckbox
-                        checkColor={colorPurple}
-                        bgColor={`linear-gradient(to right, ${colorWhite} 90%, ${colorPink} 10%)`}
-                        labelText="<Suscribirse_al_newsletter/>"
-                        size={15}
-                        isChecked={isChecked}
-                        onCheckboxChange={handleCheckboxChange}
-                    />
-
-                    <div className="content-center">
-                        <ChilisitesStyledButton
-                            function={handleSubmit}
-                            buttonText='<Enviar/>'
-                            buttonColor={colorBlack}
-                            backgroundColorL={colorOrange}
-                            backgroundColorR={colorPink}
-                            submitting={submitting}
-                        />
-                    </div>
-                </form>
-                <span className={`success-message ${showSuccessMessage ? "visible" : "hidden"}`}>
-                    {"<Mensaje_enviado!>"}
-                </span>
-            </div>
-            <script
-                type="text/javascript"
-                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-            ></script>
-            {/* <script type="text/javascript">
+                </div>
+            </form>
+            <span className={`success-message ${showSuccessMessage ? "visible" : "hidden"}`}>
+                {"<Mensaje_enviado!>"}
+            </span>
+        </div>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        ></script>
+        {/* <script type="text/javascript">
                 (function () {
                     emailjs.init({ publicKey: "service_eknlyzc" })})();
             </script> */}
-        </section>
-    )
+    </section>
+)
 }

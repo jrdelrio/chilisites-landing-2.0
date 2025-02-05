@@ -46,7 +46,7 @@ export const ProjectsSection = () => {
                 className="container-fluid"
                 style={maxHeight}
             >
-                <div className="row gy-4"
+                <div className="row"
 
                 >
                     {projects.map((project, index) =>
@@ -56,13 +56,13 @@ export const ProjectsSection = () => {
                             image={project.image}
                             type={project.type}
                             link={project.link}
-                            ref={index == 0 ? cardRef : null}
+                            ref={index === 0 ? cardRef : null}
                         />
                     )}
                 </div>
             </div>
             <h3 className="mt-5">
-                <a className='color-purple link-all-projects font-roboto' onClick={toggleShowAll}>
+                <a href="" className='color-purple link-all-projects font-roboto' onClick={toggleShowAll}>
                     {showAll ? "<Ver_menos_proyectos />" : "<Ver_todos_los_proyectos />"}
                 </a>
             </h3>
