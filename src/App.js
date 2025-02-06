@@ -8,15 +8,17 @@ import { TechsSection } from "./sections/TechsSection";
 import { ClientsSection } from "./sections/ClientsSection";
 
 import "../src/styles/app.scss";
+import { IntroView } from "./components/IntroView";
 
 function App() {
     return (
         <>
+            <IntroView />⁄
             <HeaderSection />
             <ServicesSection />
+            <TechsSection />
             <ProjectsSection />
             <QuotesAboutSection />
-            <TechsSection />
             {/* <BlogSection /> */}
             <ClientsSection />
             <ContactSection />

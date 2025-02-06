@@ -5,7 +5,7 @@
     height: fit-content;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
     margin-bottom: 60px;
     // border-radius: 10px;
 
@@ -23,31 +23,31 @@
     }
 
     // Para futuros efectos de gradientes
-    &::before,
-    &::after {
-        background: linear-gradient(
-            to right,
-            rgba(138, 43, 226, 1) 0%,
-            rgba(138, 43, 226, 0) 100%
-        );
-        content: "";
-        height: 100%;
-        position: absolute;
-        width: 100px;
-        z-index: 2;
-    }
+    // &::before,
+    // &::after {
+    //     background: linear-gradient(
+    //         to right,
+    //         rgba(138, 43, 226, 1) 0%,
+    //         rgba(138, 43, 226, 0) 100%
+    //     );
+    //     content: "";
+    //     height: 100%;
+    //     position: absolute;
+    //     width: 100px;
+    //     z-index: 2;
+    // }
 
     .slide-track {
         display: flex;
         gap: 12px;
-        animation: scroll 40s linear infinite;
-        -webkit-animation: scroll 40s linear infinite;
+        animation: scroll 120s linear infinite;
+        -webkit-animation: scroll 120s linear infinite;
 
         .slide {
             margin: 0;
             border-radius: 10px;
             text-align-last: center;
-            width: 280px;
+            width: 400px;
         }
     }
 
@@ -58,33 +58,11 @@
         }
 
         100% {
-            -webkit-transform: translateX(calc(-280px * 13 - 12px * 12));
-            transform: translateX(calc(-280px * 13 - 12px * 12));
+            -webkit-transform: translateX(calc(-400px * 13 - 12px * 12));
+            transform: translateX(calc(-400px * 13 - 12px * 12));
 
         }
     }
-
-    /* Media queries */
-    @mixin mobile {
-        @media (width <= 575.98px) {
-            @content;
-        }
-    }
-
-    @mixin tablet {
-        @media (576px < width < 991.98px) {
-            @content;
-        }
-    }
-
-    @mixin desktop {
-        @media (992px <= width) {
-            @content;
-        }
-    }
-
-
-
 
     // Media queries
     @include mobile {

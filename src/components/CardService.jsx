@@ -1,4 +1,5 @@
 import "../styles/app.scss";
+import "../styles/card-service.scss";
 
 // Función para obtener el valor de la variable CSS
 const getCSSVariableValue = (variable) => {

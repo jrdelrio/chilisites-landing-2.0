@@ -18,7 +18,8 @@ export const ProjectsSection = () => {
 
 
 
-    const toggleShowAll = () => {
+    const toggleShowAll = (event) => {
+        event.preventDefault();
         setShowAll((prevShowAll) => !prevShowAll);
     };
 

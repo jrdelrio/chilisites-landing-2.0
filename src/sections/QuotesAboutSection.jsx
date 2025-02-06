@@ -9,6 +9,7 @@ export const QuotesAboutSection = () => {
     const colorPurple = 'var(--color-purple)';
     const colorOrange = 'var(--color-orange)';
     const colorWhite = 'var(--color-white)';
+    const colorPurpleSpecial = "#7f6ae8"
 
     const scrollToSection = (id) => {
         const section = document.getElementById(id);
@@ -30,7 +31,7 @@ export const QuotesAboutSection = () => {
                         function={handleClick}
                         buttonText='<cotizar_aqui />'
                         buttonColor={colorPurple}
-                        backgroundColorL={colorPurple}
+                        backgroundColorL={colorPurpleSpecial}
                         backgroundColorR={colorWhite}
                         width={350}
                         heigth={100}
