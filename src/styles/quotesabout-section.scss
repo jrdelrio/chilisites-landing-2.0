@@ -1,7 +1,9 @@
 @import "./app.scss";
 
 #quotes-about-section {
-    background-color: blueviolet;
+    background-image: url('../img/bg/bg-header.jpg');
+    background-size: cover;
+    background-position: center;
     padding-top: 80px;
     padding-bottom: 50px;
 

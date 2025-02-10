@@ -199,3 +199,17 @@
         border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
     }
 }
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

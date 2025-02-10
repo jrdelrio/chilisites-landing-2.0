@@ -1,14 +1,30 @@
 @import "app.scss";
 
+$color-white: #ffffff;
+$color-gray-1: #f8f8f8;
+$color-black: #212832;
+$color-purple: #573AE7;
+$light-purple: #e8e7ff;
+$color-orange: #EF8E4A;
+$color-pink: #DCB6F4;
+
 // Colors
 $colors: (
-    bg1: #dff9fb,
-    bg2: #ffffff,
-    color1: rgb(104, 109, 224),
-    color2: rgb(126, 214, 223),
-    color3: rgb(223, 249, 251),
-    color4: rgb(255, 121, 121),
-    color5: rgb(149, 175, 192),
+    // bg1: #dff9fb,
+    // bg2: #ffffff,
+    // color1: rgb(104, 109, 224),
+    // color2: rgb(126, 214, 223),
+    // color3: rgb(223, 249, 251),
+    // color4: rgb(255, 121, 121),
+    // color5: rgb(149, 175, 192),
+
+    bg1: $color-pink,
+    bg2: $color-white,
+    color1: $color-purple,
+    color2: $color-orange,
+    color3: $light-purple,
+    color4: $color-orange,
+    color5: $color-gray-1,
 );
 
 $animations: (

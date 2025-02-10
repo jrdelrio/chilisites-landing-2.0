@@ -22,7 +22,6 @@ export const HeaderSection = () => {
             <h1 className='color-white font-titillium'>Aumenta tu visibilidad con CHILISITES</h1>
             {/* <AuroraEffectText text='CHILISITES' /> */}
 
-
             <h3 className='color-white font-roboto'>
                 <Typewriter
                     words={typeWriterText}
@@ -52,10 +51,11 @@ export const HeaderSection = () => {
                     transition={{ duration: 1.5, ease: "easeInOut" }} // Duración y tipo de animación
                 /> */}
 
+
                 {/* <MockupShopify /> */}
 
-            </div>
+            </div >
 
-        </header>
+        </header >
     )
 };

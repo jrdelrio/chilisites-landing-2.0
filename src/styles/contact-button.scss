@@ -9,7 +9,7 @@
     padding: 6px 26px;
 
     /* Fondo con degradado de izquierda a derecha */
-    background: linear-gradient(135deg,$color-orange, $color-pink, $color-white);
+    background: linear-gradient(135deg, $color-orange 15%, $color-pink 60%, $color-white 112%);
 
     /* Sombra proyectada hacia abajo y a la derecha */
     box-shadow: 5px 5px 0px 0px #000000;
