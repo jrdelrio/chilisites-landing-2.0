@@ -14,6 +14,20 @@
     min-height: 100vh;
     height: fit-content;
 
+    .navbar .container {
+        @include tablet {
+            padding: 0 6%;
+        }
+
+        @include mobile {
+            padding: 0 10%;
+        }
+
+        @include desktop {
+            padding-left: 60px;
+        }
+    }
+
     .mockups {
         position: relative;
     }
