@@ -13,7 +13,7 @@ import { IntroView } from "./components/IntroView";
 function App() {
     return (
         <>
-            <IntroView />⁄
+            {/* <IntroView />⁄ */}
             <HeaderSection />
             <ServicesSection />
             <TechsSection />
