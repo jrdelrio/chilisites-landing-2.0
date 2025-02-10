@@ -60,9 +60,11 @@
     }
 
     &:hover {
-        .project-link,
-        h4,
-        .project-card-footer svg {
+        .project-link {
+            opacity: 1;
+        }
+
+        h4 {
             opacity: 1;
         }
     }
@@ -98,32 +100,33 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
+    transform: translate(-50%, -100%);
+    font-size: 36px;
     font-weight: bold;
     color: $color-white;
     text-decoration: none;
     opacity: 0;
     cursor: pointer;
-    transition: opacity 0.3s ease-in-out, font-size 0.3s ease;
+    transition: opacity 0.3s ease-in-out, font-size 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
 
     &:hover {
-        font-size: 35px;
+        transform: translate(-50%, -100%) scale(1.15);
     }
 
-    @media (max-width: 1000px) {
-        font-size: 24px;
+    @include tablet {
+        font-size: 25px;
 
         &:hover {
-            font-size: 28px;
+            transform: translate(-50%, -100%) scale(1.15);
         }
     }
 
-    @media (max-width: 600px) {
-        font-size: 24px;
+    @include mobile {
+        font-size: 26px;
 
         &:hover {
-            font-size: 28px;
+            transform: translate(-50%, -100%) scale(1.2);
         }
     }
 }

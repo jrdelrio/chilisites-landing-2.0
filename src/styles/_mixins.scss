@@ -1,12 +1,12 @@
 /* Media queries */
 @mixin mobile {
-    @media (width <= 575.98px) {
+    @media (width <= 575px) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (576px < width < 991.98px) {
+    @media (576px < width < 992px) {
         @content;
     }
 }
