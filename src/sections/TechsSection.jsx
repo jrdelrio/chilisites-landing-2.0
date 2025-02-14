@@ -1,5 +1,5 @@
 import { SectionTitle } from "../components/SectionTitle";
-import AOS from 'aos';
+
 // import 'aos/dist/aos.css';
 import "../styles/techs-section.scss";
 import { TechItem } from "../components/TechItem";

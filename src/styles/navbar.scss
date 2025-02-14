@@ -1,3 +1,5 @@
+@import "./app.scss";
+
 nav.navbar {
     padding: 40px 0;
 
@@ -23,9 +25,9 @@ nav.navbar {
         gap: 8rem;
 
         li {
-            transition: scale 0.2s ease;
+            transition: transform 0.2s ease;
             &:hover {
-                scale: 1.2;
+                transform: scale(1.2);
             }
         }
     }
@@ -33,10 +35,10 @@ nav.navbar {
     button.navbar-toggler {
         height: 40px !important;
         padding: 12px !important;
-        transition: scale 0.1s ease-in-out;
+        transition: transform 0.1s ease-in-out;
 
         &:hover {
-            scale: 1.1;
+            transform: scale(1.1);
         }
     }
 
@@ -84,7 +86,21 @@ nav.navbar {
         }
     }
 
-    @media (max-width: 992px) {
+    @include mobile {
+        ul {
+            gap: 15px;
+        }
+
+        .navbar-toggler {
+            border-color: white;
+        }
+
+        .navbar-toggler-icon {
+            background-color: black;
+        }
+    }
+
+    @include tablet {
         ul {
             gap: 15px;
         }

@@ -1,13 +1,17 @@
-@import url('./app.scss');
+@import "app.scss";
 
 /* Tecnologías grid */
 #techs-section {
+    background-color: $color-white;
+    position: relative;
+    z-index: 100;
+
     .technologies-grid {
         display: flex;
         flex-wrap: wrap; /* Permite que los elementos se adapten a la pantalla */
         justify-content: center;
         gap: 30px;
-        margin-bottom: 50px;
+        padding-bottom: 50px;
 
         /* Items de tecnología */
         .technology-item {

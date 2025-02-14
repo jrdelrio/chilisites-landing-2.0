@@ -7,19 +7,17 @@
     position: relative;
     width: 100vw;
     margin-bottom: 60px;
-    // border-radius: 10px;
 
     &::after {
         right: 0;
         top: 0;
-       
+
         transform: rotateZ(180deg);
     }
 
     &::before {
         left: 0;
         top: 0;
-        
     }
 
     // Para futuros efectos de gradientes
@@ -48,6 +46,10 @@
             border-radius: 10px;
             text-align-last: center;
             width: 400px;
+
+            @include mobile {
+                width: 180px;
+            }
         }
     }
 
@@ -60,7 +62,6 @@
         100% {
             -webkit-transform: translateX(calc(-400px * 13 - 12px * 12));
             transform: translateX(calc(-400px * 13 - 12px * 12));
-
         }
     }
 
@@ -72,6 +73,5 @@
     }
 
     @include desktop {
-       
     }
 }

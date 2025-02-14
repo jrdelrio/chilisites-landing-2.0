@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     padding: 70px 130px;
+    position: relative;
+    z-index: 100;
 
     .logo {
         img {

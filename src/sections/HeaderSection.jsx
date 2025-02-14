@@ -32,7 +32,8 @@ export const HeaderSection = () => {
                 />
             </h3>
 
-            <div className='mockups'>
+            {/* <div className='mockups'> */}
+                <MockupShopify />
 
                 {/* <motion.img
                     src={iphoneMockup}
@@ -54,7 +55,7 @@ export const HeaderSection = () => {
 
                 {/* <MockupShopify /> */}
 
-            </div >
+            {/* </div > */}
 
         </header >
     )

@@ -1,6 +1,11 @@
+@import "app.scss";
+
 #clients-section {
     padding: 50px 0;
     text-align: center;
+    position: relative;
+    z-index: 100;
+    background-color: $color-white;
 
     .clients-grid {
         display: flex;

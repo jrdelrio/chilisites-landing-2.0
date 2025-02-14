@@ -27,13 +27,12 @@
     font-weight: 800;
     letter-spacing: var(--ls);
     position: relative;
-    overflow: hidden;
     margin: 0;
     color: transparent; /* Hace el texto transparente */
     background: linear-gradient(to right, var(--clr-1), var(--clr-2), var(--clr-3), var(--clr-4));
     -webkit-background-clip: text;
     background-clip: text;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .aurora {

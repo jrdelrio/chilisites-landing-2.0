@@ -3,6 +3,10 @@
 #services-section {
     background-color: aliceblue;
     padding: 80px 0 100px 0;
+    position: relative;
+    z-index: 10;
+    margin-top: 100vh;
+
 
     .services-grid {
         display: flex;
@@ -18,7 +22,6 @@
             text-align: center;
 
             > div {
-                //este div debe quedar centrado
                 display: flex;
                 justify-content: center;
                 align-items: center;

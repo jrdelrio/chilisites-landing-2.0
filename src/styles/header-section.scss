@@ -3,16 +3,19 @@
 #header-section {
     text-align: -webkit-center;
     padding-bottom: 50px;
-    position: relative;
     background: {
         image: url("../img/bg/bg-header.jpg");
-        size: cover; 
-        position: center; 
+        size: cover;
+        position: center;
         repeat: no-repeat;
     }
     z-index: 1;
     min-height: 100vh;
     height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     .navbar .container {
         @include tablet {
@@ -45,16 +48,17 @@
             margin-bottom: 40px;
             font-size: 5.5rem;
             line-height: 6rem;
+            max-width: 80%;
         }
 
         h3 {
             text-align: center;
             z-index: 1;
-            width: 70%;
+            width: 60%;
             margin-bottom: 40px;
         }
     }
-    
+
     @include tablet {
         h1 {
             margin-bottom: 40px;
@@ -70,7 +74,7 @@
     @include mobile {
         h1 {
             margin-bottom: 20px;
-            max-width: 80%;
+            max-width: 90%;
             font-size: 2.8rem;
             line-height: 2.8rem;
         }
@@ -81,5 +85,5 @@
             margin-top: 20px;
         }
     }
-
 }
+
