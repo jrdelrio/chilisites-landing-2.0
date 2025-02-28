@@ -38,8 +38,8 @@
     .slide-track {
         display: flex;
         gap: 12px;
-        animation: scroll 120s linear infinite;
-        -webkit-animation: scroll 120s linear infinite;
+        animation: scroll 50s linear infinite;
+        -webkit-animation: scroll 50s linear infinite;
 
         .slide {
             margin: 0;
@@ -60,8 +60,8 @@
         }
 
         100% {
-            -webkit-transform: translateX(calc(-400px * 13 - 12px * 12));
-            transform: translateX(calc(-400px * 13 - 12px * 12));
+            -webkit-transform: translateX(calc(-400px * 6 - 12px * 5));
+            transform: translateX(calc(-400px * 6 - 12px * 5));
         }
     }
 

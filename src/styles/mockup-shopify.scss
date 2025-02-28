@@ -3,10 +3,13 @@
 $bg-mockup: "../img/mockups/shopify-partners-mockup.png";
 
 .shopify-partners-container {
-    position: absolute;
     background-image: url($bg-mockup);
     background-size: cover;
     aspect-ratio: 1 / 0.45;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
 
     .logo {
         position: absolute;
@@ -16,7 +19,7 @@ $bg-mockup: "../img/mockups/shopify-partners-mockup.png";
     @include desktop {
         border-radius: 15px;
         height: 250px;
-        right: 0;
+        transform: translate(40px, 40px);
 
         .logo {
             left: 25px;
@@ -37,7 +40,6 @@ $bg-mockup: "../img/mockups/shopify-partners-mockup.png";
     @include mobile {
         border-radius: 5px;
         height: 140px;
-        bottom: 10%;
 
         .logo {
             bottom: 28%;

@@ -164,7 +164,7 @@ export const ContactSection = () => {
     }
 
     useEffect(() => {
-        console.log(formData)
+        // console.log(formData)
     }, [formData]);
 
     useEffect(() => {
@@ -177,7 +177,7 @@ export const ContactSection = () => {
 
         return (
             <section id='contact-section' className="font-roboto">
-
+                
                 <div className="gradient-bg">
                     <div className="gradients-container">
                         <div className="g1"></div>

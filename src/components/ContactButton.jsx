@@ -10,6 +10,6 @@ export const ContactButton = () => {
     };
 
     return (
-        <button className="contact-button font-roboto" onClick={() => scrollToSection('contact-section')}>Contacto</button>
+        <button className="contact-button font-roboto" onClick={() => scrollToSection('contact-section')}>{"<Contacto/>"}</button>
     )
 }

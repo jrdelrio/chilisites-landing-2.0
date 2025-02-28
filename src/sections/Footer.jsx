@@ -1,5 +1,5 @@
 import "../styles/footer.scss";
-import logoChilisites from "../img/chiliSites/logo-chilisites-b&w.png";
+import logoChilisites from "../img/chiliSites/logo-chilisites-transparent-white.png";
 import { LocationIcon } from "../img/icons/Location";
 import { WhatsappIcon } from "../img/icons/Whatsapp";
 import { MailIcon } from "../img/icons/EmailIcon";
@@ -38,12 +38,12 @@ export const Footer = () => {
             <div className="contact">
                 <a target="_blank" href="mailto:contacto@chilisites.com" rel="noopener noreferrer">
                     <MailIcon /> contacto@chilisites.com
-                    </a>
+                </a>
                 <a target="_blank" href="https://wa.me/56965669585" rel="noopener noreferrer">
-                <WhatsappIcon /> Whatsapp
+                    <WhatsappIcon /> Whatsapp
                 </a>
                 <a target="_blank" href="https://maps.app.goo.gl/R4WvRe5d42tDkgjz9" rel="noopener noreferrer">
-                <LocationIcon /> Nueva_Costanera 4323, Vitacura, Chile
+                    <LocationIcon /> Nueva_Costanera 4323, Vitacura, Chile
                 </a>
             </div>
         </footer>

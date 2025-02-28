@@ -9,6 +9,8 @@
 
     .container-fluid {
         justify-items: center;
+        // overflow: hidden;
+        // transition: max-height 2s ease;
     }
 
     .row {
@@ -17,7 +19,6 @@
             2,
             1fr
         ); // 2 columnas en pantallas grandes
-        gap: 20px; // Espacio entre las tarjetas
         margin-right: 8vw;
         margin-left: 8vw;
         @media (width <= 1200px) {

@@ -4,14 +4,14 @@ import { services } from "../data/services";
 
 import "../styles/services-section.scss";
 
-const colorBlack = 'var(color-black)';
+const colorBlack = 'var(--color-black)';
 const colorOrange = 'var(--color-orange)';
 
 
-export const ServicesSection = () => {
+export const ServicesSection = ({marginTop}) => {
 
     return (
-        <section id="services-section">
+        <section id="services-section" style={{marginTop: marginTop}}>
             <div className="container">
                 <SectionTitle
                     colorBracket={colorOrange}
@@ -32,5 +32,9 @@ export const ServicesSection = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
+
+ServicesSection.defaultProps = {
+    marginTop: "0px"
+};
