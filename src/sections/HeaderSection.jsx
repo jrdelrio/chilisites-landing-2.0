@@ -57,6 +57,13 @@ export const HeaderSection = () => {
     const colorPink = 'var(--color-pink)';
     const colorWhite = 'var(--color-white)';
 
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            window.scrollTo(0, section.offsetTop);
+        }
+    };
+
     return (
         <header id='header-section' ref={headerRef}>
             <Navbar />
@@ -85,6 +92,7 @@ export const HeaderSection = () => {
                     width={200}
                     heigth={50}
                     fontWeight="bold"
+                    function={() => scrollToSection("contact-section")} 
                 />
             </div>
 
