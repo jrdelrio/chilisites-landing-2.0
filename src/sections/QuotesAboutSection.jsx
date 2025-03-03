@@ -33,9 +33,9 @@ export const QuotesAboutSection = () => {
                         buttonColor={colorPurple}
                         backgroundColorL={colorPurpleSpecial}
                         backgroundColorR={colorWhite}
-                        width={350}
-                        heigth={100}
-                        fontSize={25}
+                        width={260}
+                        heigth={50}
+
 
                     />
                 </div>

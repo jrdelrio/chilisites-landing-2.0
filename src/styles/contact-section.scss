@@ -94,6 +94,10 @@ $blending: hard-light;
     position: relative;
     z-index: 100;
 
+    @include mobile {
+        padding-top: 30px;
+    }
+
     &::before {
         content: "";
         position: absolute;
