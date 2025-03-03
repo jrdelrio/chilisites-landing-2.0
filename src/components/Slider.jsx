@@ -4,69 +4,98 @@ import { quotes } from "../data/quotes";
 import "../styles/slider.scss";
 
 export const Slider = () => {
-    const cardRef = useRef(null);
-    const trackRef = useRef(null);
     const [cardWidth, setCardWidth] = useState(0);
     const [trackGap, setTrackGap] = useState(12);
     const [slideTrackWidth, setSlideTrackWidth] = useState(0);
+    const [cicleSeconds, setCicleSeconds] = useState(50);
 
-    // console.log(quotes.length);
-    // console.log(trackGap);
+    const cardRef = useRef(null);
 
-    // useEffect(() => {
-    //     const width = (280 * quotes.length + (trackGap * (quotes.length - 1))) * 2 + 12;
-    //     console.log("El ancho del slider es de: ", width);
-    //     setSlideTrackWidth(width);
-    // }, [quotes, trackGap]);
+    const isMobile = () => window.innerWidth <= 768;
+
+    useEffect(() => {
+        setCicleSeconds(isMobile() ? 80 : 50);
+
+        const handleResize = () => {
+            setCicleSeconds(isMobile() ? 80 : 50);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+   
+    // Obtiene el ancho de una card después de que el componente se monta
+    useEffect(() => {
+        if (cardRef.current) {
+            const rect = cardRef.current.getBoundingClientRect();
+            setCardWidth(rect.width);
+            console.log(`Ancho de la card:`, rect.width);
+        }
+    }, []);
+
+      // Calcula el ancho total del slide-track una vez que `cardWidth` está definido
+      useEffect(() => {
+        if (cardWidth > 0) {
+            const sliderTrackWidth = (cardWidth * quotes.length + (trackGap * (quotes.length - 1))) * 2;
+            setSlideTrackWidth(sliderTrackWidth);
+        }
+    }, [cardWidth, trackGap]);
 
 
+    console.log(`ancho del gap: `, trackGap);
 
+    const keyframes = `
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-${cardWidth}px * ${quotes.length} - ${trackGap}px * ${quotes.length - 1}));
+            }
+        }
+    `;
 
-    // useEffect(() => {
-    //     if (cardWidth) {
-    //         console.log(`Cada slide mide ${cardWidth}px`);
-    //         console.log(`Hay ${quotes.length} slides`)
-    //         console.log(`El espacio entre slides es de ${trackGap}px`)
-    //         console.log(`El slider mide ${cardWidth * quotes.length + (trackGap * (quotes.length - 1))}px`);
-    //     }
-    // }, [cardWidth, trackGap]);
+    const cicleTime = `scroll ${cicleSeconds}s linear infinite`;
 
     return (
-        <div className="slider">
-            <div className="slide-track" style={{
-                width:
-                    slideTrackWidth ? `${slideTrackWidth}px`
-                        : "auto"
-            }}>
-                {quotes.map((quote, index) => (
-                    <CardQuote
-                        key={quote.id}
-                        ref={index === 0 ? cardRef : null}
-                        id={quote.id}
-                        image={quote.image}
-                        quote={quote.quote}
-                        empresa={quote.empresa}
-                        textColor={quote.textColor}
-                        bgColor={quote.bgColor}
-                        bgColorDecor={quote.bgColorDecor}
-                        imgAltText={quote.imgAltText}
-                    />
+        <>
+            <style>{keyframes}</style>
+            <div className="slider">
+                <div className="slide-track" style={{
+                    width: slideTrackWidth ? `${slideTrackWidth}px` : "auto",
+                    animation: cicleTime,
+                    WebkitAnimation: cicleTime
+                }}>
+                    {quotes.map((quote, index) => (
+                        <CardQuote
+                            key={quote.id}
+                            ref={index === 0 ? cardRef : null}
+                            id={quote.id}
+                            image={quote.image}
+                            quote={quote.quote}
+                            empresa={quote.empresa}
+                            textColor={quote.textColor}
+                            bgColor={quote.bgColor}
+                            bgColorDecor={quote.bgColorDecor}
+                            imgAltText={quote.imgAltText}
+                        />
 
-                ))}
-                {quotes.map((quote, index) => (
-                    <CardQuote
-                        key={`${quote.id} _duplicado`}
-                        id={quote.id}
-                        image={quote.image}
-                        quote={quote.quote}
-                        empresa={quote.empresa}
-                        textColor={quote.textColor}
-                        bgColor={quote.bgColor}
-                        bgColorDecor={quote.bgColorDecor}
-                        imgAltText={quote.imgAltText}
-                    />
-                ))}
+                    ))}
+                    {quotes.map((quote, index) => (
+                        <CardQuote
+                            key={`${quote.id} _duplicado`}
+                            id={quote.id}
+                            image={quote.image}
+                            quote={quote.quote}
+                            empresa={quote.empresa}
+                            textColor={quote.textColor}
+                            bgColor={quote.bgColor}
+                            bgColorDecor={quote.bgColorDecor}
+                            imgAltText={quote.imgAltText}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
