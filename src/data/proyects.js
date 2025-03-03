@@ -2,10 +2,10 @@ import espacioConfluye from "../img/projects/espacio-confluye.jpg";
 import victoriaMaldonado from "../img/projects/victoria-maldonado.jpg";
 import angelaDelrio from "../img/projects/angela-delrio.jpg";
 import sebastianRodillo from "../img/projects/sebastian-rodillo.jpg";
-import kado from "../img/projects/kado.png";
-import decima from "../img/projects/decima propiedades.png";
-import photography from "../img/projects/rdr-photography.png";
-import lids from "../img/projects/lids.png";
+import kado from "../img/projects/kado.jpg";
+import decima from "../img/projects/decima.webp";
+import photography from "../img/projects/raimundodelrio.webp";
+import lids from "../img/projects/lids.webp";
 
 
 
