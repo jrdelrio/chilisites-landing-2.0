@@ -1,4 +1,4 @@
-import { forwardRef, useRef, useEffect } from "react";
+import { useState, forwardRef, useRef, useEffect } from "react";
 import { motion, useInView } from "motion/react";
 
 import mockup from "../img/mockups/shopify-partners-mockup.png"
@@ -6,15 +6,24 @@ import logo from "../img/mockups/shopify-partners-logo.png";
 
 import "../styles/mockup-shopify.scss";
 
+// Función para detectar si es un dispositivo móvil
+const isMobile = () => window.innerWidth <= 768;
+
 export const MockupShopify = forwardRef((props, ref) => {
     const shopifyRef = useRef(null);
-    const isInView = useInView(shopifyRef,
-        //  { once: true }
-        );
+    const isInView = useInView(shopifyRef);
+    const [mobile, setMobile] = useState(isMobile());
 
     useEffect(() => {
         console.log("shopify is in view: ", isInView)
     }, [isInView]);
+
+    useEffect(() => {
+        // const handleResize = () => setMobile(isMobile());
+        // window.addEventListener("resize", handleResize);
+        // return () => window.removeEventListener("resize", handleResize);
+        console.log("shopify is mobile: ", mobile)
+    }, []);
 
     return (
         <motion.article
@@ -23,7 +32,7 @@ export const MockupShopify = forwardRef((props, ref) => {
             initial={{opacity: 0, y: -40}}
             animate={{
                 opacity: isInView ? 1 : 0,
-                x: isInView ? 40 : -1100,
+                x: isInView ? (mobile ? 15 : 30) : -1100,
                 y: 40
             }}
             transition={{ duration: 0.5 }}
