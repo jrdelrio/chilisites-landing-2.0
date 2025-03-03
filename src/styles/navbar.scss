@@ -36,9 +36,10 @@ nav.navbar {
         }
     }
 
-    .collapse.navbar-collapse {
-        transform: translateX(5%);
-    }
+    // .collapse.navbar-collapse,
+    // .collapse.navbar-collapse.show {
+    //     transform: translateX(5%);
+    // }
 
     ul {
         gap: 8rem;
@@ -62,10 +63,7 @@ nav.navbar {
     }
 
     .navbar-toggler {
-        border: 2px solid white;
-        border-radius: 5px;
-        padding: 5px;
-        outline: none !important;
+        border: none;
 
         &:focus {
             box-shadow: none;
@@ -76,9 +74,9 @@ nav.navbar {
             position: relative;
             width: 30px;
             height: 3px;
-            background-color: black;
             display: block;
-            filter: invert(1);
+            border: none;
+            background-color: $color-purple;
 
             &::before,
             &::after {
@@ -93,15 +91,17 @@ nav.navbar {
 
             &::before {
                 top: -8px;
+                background-color: $color-purple;
             }
 
             &::after {
                 top: 8px;
+                background-color: $color-purple;
             }
         }
 
         &:hover .navbar-toggler-icon {
-            background-color: black;
+            background-color: $color-purple;
         }
     }
 
@@ -110,12 +110,8 @@ nav.navbar {
             gap: 15px;
         }
 
-        .navbar-toggler {
-            border-color: white;
-        }
-
         .navbar-toggler-icon {
-            background-color: black;
+            background-color: $color-purple;
         }
     }
 
@@ -124,12 +120,8 @@ nav.navbar {
             gap: 15px;
         }
 
-        .navbar-toggler {
-            border-color: white;
-        }
-
         .navbar-toggler-icon {
-            background-color: black;
+            background-color: $color-purple;
         }
     }
 }
