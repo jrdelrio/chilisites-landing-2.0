@@ -22,5 +22,5 @@ Bienvenido a **ChiliSites**, nuestra plataforma especializada en **desarrollo we
 
 
 <div align=center height="200" width="200">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUAfyVe3Easiycyh3isP9wDQTYuSmGPsPQvLIJdEYvQ_DsFq5Ez2Nh_QjiS3oZ3B8ZPfK9cZQyIStmQMV1lDPLw">
+  <img src="public/logo-chilisites-fondo-solido.png">
 </div>
