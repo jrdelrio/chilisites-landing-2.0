@@ -29,7 +29,7 @@ export const MockupShopify = forwardRef((props, ref) => {
         <motion.article
             ref={shopifyRef}
             className="shopify-partners-container"
-            initial={{opacity: 0, y: -40}}
+            initial={{opacity: 0, y: 40}}
             animate={{
                 opacity: isInView ? 1 : 0,
                 x: isInView ? (mobile ? 15 : 30) : -1100,
