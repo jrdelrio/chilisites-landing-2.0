@@ -1,0 +1,32 @@
+[
+    {
+        "slug": "post-prueba-1",
+        "title": "Título de blog de prueba 1",
+        "file": "test.md"
+    },
+    {
+        "slug": "post-prueba-2",
+        "title": "Título de blog de prueba 2",
+        "file": "test-2.md"
+    },
+    {
+        "slug": "tendencias-desarrollo-web",
+        "title": "Tendencias en desarrollo web para 2025",
+        "file": "tendencias-desarrollo-web.md"
+    },
+    {
+        "slug": "seo-consejos-clave",
+        "title": "Consejos clave para mejorar tu SEO",
+        "file": "seo-consejos-clave.md"
+    },
+    {
+        "slug": "mejorando-performance-web",
+        "title": "Cómo mejorar la performance de tu sitio web",
+        "file": "mejorando-performance-web.md"
+    },
+    {
+        "slug": "shopify-vs-woocommerce",
+        "title": "Comparativa: Shopify vs WooCommerce, ¿cuál elegir?",
+        "file": "shopify-vs-woocommerce.md"
+    }
+]

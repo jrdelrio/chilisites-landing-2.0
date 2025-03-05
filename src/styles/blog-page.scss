@@ -1,0 +1,6 @@
+.blog-page-wrapper {
+    background-color: rgb(122, 179, 179);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
