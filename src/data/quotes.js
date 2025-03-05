@@ -105,16 +105,16 @@ export const quotes = [
     //     imgAltText: "Plataforma de bienestar laboral",
     // },
 
-    // {
-    //     id: 10,
-    //     image: espacioconfluye,
-    //     quote: '"----------------------------------------------------"',
-    //     empresa: "ESPACIO CONFLUYE",
-    //     bgColor: "#ffffff",
-    //     bgColorDecor: "#fc447c",
-    //     textColor: "#000",
-    //     imgAltText: "",
-    // },
+    {
+        id: 10,
+        image: espacioconfluye,
+        quote: '"Muy buena ejecución de nuestras ideas, lo hicieron a la pinta de nuestras necesidades, muy buena disposición y profesionalismo. Quedamos súper contentas con el resultado. Ahora está todo mucho más ordenado."',
+        empresa: "ESPACIO CONFLUYE",
+        bgColor: "#ffffff",
+        bgColorDecor: "#fc447c",
+        textColor: "#000",
+        imgAltText: "",
+    },
     {
         id: 11,
         image: sporium,

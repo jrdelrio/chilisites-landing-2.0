@@ -7,17 +7,17 @@ export const Slider = () => {
     const [cardWidth, setCardWidth] = useState(0);
     const [trackGap, setTrackGap] = useState(12);
     const [slideTrackWidth, setSlideTrackWidth] = useState(0);
-    const [cicleSeconds, setCicleSeconds] = useState(50);
+    const [cicleSeconds, setCicleSeconds] = useState(80);
 
     const cardRef = useRef(null);
 
     const isMobile = () => window.innerWidth <= 768;
 
     useEffect(() => {
-        setCicleSeconds(isMobile() ? 80 : 50);
+        setCicleSeconds(isMobile() ? 100 : 80);
 
         const handleResize = () => {
-            setCicleSeconds(isMobile() ? 80 : 50);
+            setCicleSeconds(isMobile() ? 100 : 80);
         };
 
         window.addEventListener("resize", handleResize);
