@@ -5,6 +5,7 @@ import { WhatsappIcon } from "../img/icons/Whatsapp";
 import { MailIcon } from "../img/icons/EmailIcon";
 
 import "../styles/footer.scss";
+import { useEffect } from "react";
 
 export const Footer = () => {
 
@@ -25,6 +26,8 @@ export const Footer = () => {
             navigate("/", { state: { sectionId } });
         }
     };
+
+
 
     return (
         <footer id="footer" className="font-roboto">

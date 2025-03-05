@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Navbar } from "../components/Navbar";
@@ -14,17 +14,21 @@ export const PostPage = () => {
 
     useEffect(() => {
         fetch(`/posts/posts.json`)
-            .then((res) => res.json())
+            .then((res) => {
+                if (!res.ok) throw new Error("Network response was not ok");
+                return res.json();
+            })
             .then((data) => {
                 const post = data.find((p) => p.slug === slug);
                 if (post && post.file) {
                     setPostTitle(post.title);
 
-                    // 🔹 Ahora cargamos el contenido desde "public/posts/"
-                    fetch(`/posts/${post.file}`)
-                        .then((res) => res.text())
-                        .then((text) => setPostContent(text))
-                        .catch(() => setPostContent("# Error: No se encontró el post"));
+                    return fetch(`/posts/${post.file}`)
+                        .then((res) => {
+                            if (!res.ok) throw new Error("Error al cargar post");
+                            return res.text();
+                        })
+                        .then(setPostContent);
                 } else {
                     setPostContent("# Error: No se encontró el post");
                 }
@@ -42,7 +46,6 @@ export const PostPage = () => {
                     <h1>{postTitle}</h1>
                     <ReactMarkdown>{postContent}</ReactMarkdown>
                 </main>
-                {/* <Footer /> */}
             </div>
         </>
     )

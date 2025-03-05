@@ -18,6 +18,7 @@ $color-purple: #573ae7;
 $light-purple: #e8e7ff;
 $color-orange: #ef8e4a;
 $color-pink: #dcb6f4;
+$blogBgColor: rgb(122, 179, 179);
 
 /* Clases de color */
 .color-white {
@@ -52,10 +53,9 @@ $color-pink: #dcb6f4;
     font-weight: bold;
 }
 
-html, body {
-    height: 100%; // Asegura que la página use toda la altura
-    margin: 0;
-    padding: 0;
+#root {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
 }
