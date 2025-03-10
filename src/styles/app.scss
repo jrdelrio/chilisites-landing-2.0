@@ -53,6 +53,12 @@ $blogBgColor: rgb(122, 179, 179);
     font-weight: bold;
 }
 
+.position-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 50px;
+}
+
 #root {
     display: flex;
     flex-direction: column;

@@ -4,11 +4,10 @@ import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { Home } from "./views/Home.jsx";
 import { BlogPage } from "./views/BlogPage.jsx";
 import { PostPage } from "./views/PostPage.jsx";
+import { AddPostPage } from "./views/AddPostPage.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import { Navbar } from "./components/Navbar";
 import { Footer } from "./sections/Footer";
-import { Container } from "react-bootstrap";
 
 import "./styles/app.scss";
 
@@ -31,6 +30,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/blog/" element={<BlogPage />} />
                 <Route path="/blog/:slug" element={<PostPage />} />
+                <Route path="/add_post" element={<AddPostPage />} />
             </Routes>
             <Footer ref={footerRef} />
         </BrowserRouter>

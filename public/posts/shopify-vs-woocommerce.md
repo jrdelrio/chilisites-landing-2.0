@@ -3,7 +3,7 @@
 Elegir la mejor plataforma para tu tienda online puede ser difícil. Aquí comparamos Shopify y WooCommerce:  
 
 | Característica      | Shopify  | WooCommerce  |
-|--------------------|----------|-------------|
+| -------------------- | :----------: | :-------------: |
 | **Facilidad de uso** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐         |
 | **Personalización** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
 | **Costo** | 💰💰💰 | 💰 |
