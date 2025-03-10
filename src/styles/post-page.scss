@@ -4,6 +4,12 @@
     background-color: $blogBgColor;
     flex-grow: 1;
 
+    .spinner-container {
+        display: flex;
+        justify-content: center;
+        scale: 2.5;
+    }
+
     .post-container {
         table {
             width: fit-content;

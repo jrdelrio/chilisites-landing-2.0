@@ -55,6 +55,7 @@ export const AddPostPage = () => {
         }
 
         console.log("✅ Post Markdown creado en drive con éxito, id:", markdownGoogleId);
+        alert("✅ (1/2) Post Markdown creado en drive con éxito")
 
         const updatedPost = {
             title: newPost.title,
@@ -83,7 +84,7 @@ export const AddPostPage = () => {
             if (!response.ok) throw new Error(`Error ${response.status}: ${responseData.error || response.statusText}`);
 
             console.log("✅ La API respondió OK. Post guardado en la base de datos");
-            alert("✅ Post publicado con éxito");
+            alert("✅ (2/2) Post agregado a la base de datos con éxito");
             setNewPost({
                 title: "",
                 slug: "",

@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import { Navbar } from "../components/Navbar";
 import { RecientPosts } from "../components/RecientPosts";
 import { API_BASE_URL } from "../utils/config.js";
+import { SpinnerBlack } from "../components/SpinnerBlack.jsx";
 import "../styles/post-page.scss";
 
 
@@ -69,14 +70,16 @@ export const PostPage = () => {
                 </header>
                 <div className="container post-container">
                     <div className="row">
-                        <main className="col-md-8">
+                        <main className="col-md-8" style={isLoading ? {alignContent: "center"} : {} }>
                             {isLoading ? (
-                                <p>Cargando post...</p>
+                                <div className="spinner-container">
+                                    <SpinnerBlack />
+                                </div>
                             ) : error ? (
                                 <p className="error">⚠ {error}</p>
                             ) : (
                                 <>
-                                    <h1 className="post-title">{postTitle}</h1>
+                                    {/* <h1 className="post-title">{postTitle}</h1> */}
                                     <div className="post-content">
                                         <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                             {postContent}

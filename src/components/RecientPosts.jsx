@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { API_BASE_URL } from "../utils/config.js";
 
 export const RecientPosts = () => {
-    const [last4Posts, setLast4Posts] = useState([]);
+    const [last3Posts, setLast4Posts] = useState([]);
     const [isLoading, setisLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`${API_BASE_URL}/posts?limit=4&order=desc`)
+        fetch(`${API_BASE_URL}/posts?limit=3&order=desc`)
             .then((res) => {
                 if (!res.ok) throw new Error("Error al cargar los posts");
                 return res.json();
@@ -24,7 +24,7 @@ export const RecientPosts = () => {
             });
     }, []);
 
-    console.log(last4Posts);
+    console.log(last3Posts);
 
 
     return (
@@ -32,7 +32,7 @@ export const RecientPosts = () => {
             <h4 className="fst-italic">Artículos recientes</h4>
             <ul className="list-unstyled">
 
-                {last4Posts.map((post) => (
+                {last3Posts.map((post) => (
                     <li key={post.slug}>
                         <Link
                             to={`/blog/${post.slug}`}

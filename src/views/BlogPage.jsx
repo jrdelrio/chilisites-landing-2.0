@@ -41,14 +41,12 @@ export const BlogPage = () => {
             })
     }, []);
 
-    console.log(posts);
-
     return (
         <div className="blog-page-wrapper">
             <header>
                 <Navbar />
             </header>
-            <div className="blog-list">
+            <div className="container blog-list">
                 <h1>📝 Blog de ChiliSites</h1>
                 {!isLoading ? <ul>
                     {posts.map((post) => (
