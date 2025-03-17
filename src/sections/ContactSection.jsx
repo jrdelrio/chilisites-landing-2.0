@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
 import { SectionTitle } from "../components/SectionTitle"
 import { CustomCheckbox } from "../components/CustomCheckbox";
@@ -40,6 +40,8 @@ export const ContactSection = () => {
     const colorPink = 'var(--color-pink)';
     const colorWhite = 'var(--color-white)';
 
+    
+
 
     const emptyForm = {
         name: '',
@@ -47,7 +49,7 @@ export const ContactSection = () => {
         phone: '',
         type: '',
         message: '',
-        subscribed: isChecked,
+        subscribed: false,
     }
 
     const [formData, setFormData] = useState(() => {
@@ -64,7 +66,6 @@ export const ContactSection = () => {
     }
 
     const handleCheckboxChange = (checked) => {
-        console.log('checkbox clicked!');
         setIsChecked(checked);
         setFormData(prevState => ({
             ...prevState,
@@ -127,12 +128,13 @@ export const ContactSection = () => {
                         throw new Error('Error en una o ambas solicitudes');
                     }
 
-                    const data1 = await responseEmailThanks.json();
-                    const data2 = await responseEmailToChilisites.json();
+                    // const data1 = await responseEmailThanks.json();
+                    // const data2 = await responseEmailToChilisites.json();
 
                     if (responseEmailThanks.ok && responseEmailToChilisites.ok) {
                         alert("Muchas gracias por contactar con nosotros! ❤️ \nRecibirás un correo de confirmación 📧");
                         setFormData(emptyForm);
+                        setIsChecked(false);
                         sessionStorage.setItem('formContacto', JSON.stringify(emptyForm));
                     } else {
                         if (!responseEmailThanks.ok) console.error("Error al enviar el correo de agradecimiento")
