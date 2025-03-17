@@ -47,7 +47,7 @@ export const ContactSection = () => {
         phone: '',
         type: '',
         message: '',
-        suscribed: isChecked,
+        subscribed: isChecked,
     }
 
     const [formData, setFormData] = useState(() => {
@@ -68,7 +68,7 @@ export const ContactSection = () => {
         setIsChecked(checked);
         setFormData(prevState => ({
             ...prevState,
-            suscribed: checked
+            subscribed: checked
         }));
     };
 
@@ -87,7 +87,7 @@ export const ContactSection = () => {
             return;
         }
 
-        const subscriptionStatus = formData.suscribed ? "✅" : "❌";
+        const subscriptionStatus = formData.subscribed ? "✅" : "❌";
 
         try {
 
@@ -116,7 +116,7 @@ export const ContactSection = () => {
                                     fromEmail: formData.email,
                                     fromPhone: formData.phone,
                                     fromType: formData.type,
-                                    fromSubscriptionStatus: formData.suscribed,
+                                    fromSubscriptionStatus: formData.subscribed,
                                     fromMessage: formData.message
                                 }
                             )
@@ -248,10 +248,6 @@ export const ContactSection = () => {
                                 {"<Mensaje_enviado!>"}
                             </span>
                         </div>
-                        <script
-                            type="text/javascript"
-                            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-                        ></script>
                     </section>
                 )
             } else {
@@ -376,14 +372,6 @@ export const ContactSection = () => {
                                 {"<Mensaje_enviado!>"}
                             </span>
                         </div>
-                        <script
-                            type="text/javascript"
-                            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-                        ></script>
-                        {/* <script type="text/javascript">
-                    (function () {
-                        emailjs.init({ publicKey: "service_eknlyzc" })})();
-                </script> */}
                     </section>
                 )
             }
