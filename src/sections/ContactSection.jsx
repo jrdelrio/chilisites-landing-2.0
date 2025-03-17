@@ -1,17 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
 import { SectionTitle } from "../components/SectionTitle"
 import { CustomCheckbox } from "../components/CustomCheckbox";
-// import { motion, useInView } from "motion/react";
 import { motion, useInView } from "framer-motion";
-import { Resend } from 'resend';
-import ReactDOMServer from "react-dom/server";
 
 import "../styles/contact-section.scss";
 
-
-import emailjs from "emailjs-com";
-import { MailToChilisites } from "../templates/MailToChilisites";
 
 export const ContactSection = () => {
 
@@ -99,18 +93,6 @@ export const ContactSection = () => {
 
         try {
 
-            // const blob = new Blob([emailBody], { type: "text/html" });
-            // const url = URL.createObjectURL(blob);
-
-            // // simular un click en un enlace de descarga
-            // const link = document.createElement("a");
-            // link.href = url;
-            // link.download = `email_${formData.name.replace(/\s/g, '_')}.html`; // Nombre del archivo
-            // document.body.appendChild(link);
-            // link.click();
-            // document.body.removeChild(link);
-            // URL.revokeObjectURL(url);
-
             setSubmitting(true);
 
             const response = await fetch('http://127.0.0.1:5000/send-email-thanks-for-contact', {
@@ -128,8 +110,9 @@ export const ContactSection = () => {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Muchas gracias por contactar con nosotros!❤️ \nRecibirás un correo de confirmación 📧");
+                alert("Muchas gracias por contactar con nosotros! ❤️ \nRecibirás un correo de confirmación 📧");
                 setFormData(emptyForm);
+                sessionStorage.setItem('formContacto', JSON.stringify(emptyForm));
             } else {
                 console.error("Error al enviar el correo:", data)
             }
@@ -140,17 +123,6 @@ export const ContactSection = () => {
         }
 
     }
-
-
-    useEffect(() => {
-        // console.log(formData)
-    }, [formData]);
-
-    useEffect(() => {
-        (() => {
-            emailjs.init({ publicKey: "service_eknlyzc" });
-        })();
-    }, []);
 
     if (!mobileDevice) {
 
