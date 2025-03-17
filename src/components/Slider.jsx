@@ -29,7 +29,7 @@ export const Slider = () => {
         if (cardRef.current) {
             const rect = cardRef.current.getBoundingClientRect();
             setCardWidth(rect.width);
-            console.log(`Ancho de la card:`, rect.width);
+            // console.log(`Ancho de la card:`, rect.width);
         }
     }, []);
 
@@ -40,9 +40,6 @@ export const Slider = () => {
             setSlideTrackWidth(sliderTrackWidth);
         }
     }, [cardWidth, trackGap]);
-
-
-    console.log(`ancho del gap: `, trackGap);
 
     const keyframes = `
         @keyframes scroll {
