@@ -1,19 +1,33 @@
-import "../styles/footer.scss";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import logoChilisites from "../img/chiliSites/logo-chilisites-transparent-white.png";
 import { LocationIcon } from "../img/icons/Location";
 import { WhatsappIcon } from "../img/icons/Whatsapp";
 import { MailIcon } from "../img/icons/EmailIcon";
 
+import "../styles/footer.scss";
+import { useEffect } from "react";
 
 export const Footer = () => {
 
+    const location = useLocation(); // 📌 Detecta la página actual
+    const navigate = useNavigate(); // 📌 Permite redirigir a otra página
+
     const scrollToSection = (id) => {
         const section = document.getElementById(id);
-        console.log(section.offsetTop)
         if (section) {
             window.scrollTo(0, section.offsetTop);
         }
     };
+
+    const handleNavigation = (sectionId) => {
+        if (location.pathname === "/") {
+            scrollToSection(sectionId);
+        } else {
+            navigate("/", { state: { sectionId } });
+        }
+    };
+
+
 
     return (
         <footer id="footer" className="font-roboto">
@@ -28,11 +42,13 @@ export const Footer = () => {
             </div>
 
             <div className="sections">
-                <button onClick={() => scrollToSection('services-section')}>Servicios</button>
-                <button onClick={() => scrollToSection('projects-section')}>Proyectos</button>
-                <button onClick={() => scrollToSection('quotes-about-section')}>Sobre_Nosotros</button>
+                <button onClick={() => handleNavigation('header-section')}>Home</button>
+                <button onClick={() => handleNavigation('services-section')}>Servicios</button>
+                <button onClick={() => handleNavigation('projects-section')}>Proyectos</button>
+                <button onClick={() => handleNavigation('quotes-about-section')}>Sobre_Nosotros</button>
                 {/* <a href="">Blog</a> */}
-                <button onClick={() => scrollToSection('contact-section')}>Contacto</button>
+                <button onClick={() => handleNavigation('contact-section')}>Contacto</button>
+                <Link to="/blog">Blog</Link>
             </div>
 
             <div className="contact">

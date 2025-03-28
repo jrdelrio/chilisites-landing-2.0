@@ -39,7 +39,7 @@ export const ChilisitesStyledButton = ({
 
     return (
         <button className="chilisites-styled-button font-roboto" style={buttonStyle} onClick={handleClick}>
-            {submitting ? 'SPINNER ENVIANDO' : buttonText}
+            {submitting ? <Spinner /> : buttonText}
         </button>
     );
 };

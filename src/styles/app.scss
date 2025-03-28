@@ -1,26 +1,24 @@
-@import './fonts.css';
-@import '_mixins.scss';
+@import "./fonts.css";
+@import "_mixins.scss";
 
 :root {
     --color-white: #ffffff;
     --color-gray-1: #f8f8f8;
     --color-black: #212832;
-    --color-purple: #573AE7;
+    --color-purple: #573ae7;
     --light-purple: #e8e7ff;
-    --color-orange: #EF8E4A;
-    --color-pink: #DCB6F4;
+    --color-orange: #ef8e4a;
+    --color-pink: #dcb6f4;
 }
 
 $color-white: #ffffff;
 $color-gray-1: #f8f8f8;
 $color-black: #212832;
-$color-purple: #573AE7;
+$color-purple: #573ae7;
 $light-purple: #e8e7ff;
-$color-orange: #EF8E4A;
-$color-pink: #DCB6F4;
-
-
-
+$color-orange: #ef8e4a;
+$color-pink: #dcb6f4;
+$blogBgColor: rgb(122, 179, 179);
 
 /* Clases de color */
 .color-white {
@@ -44,13 +42,26 @@ $color-pink: #DCB6F4;
 }
 
 .font-roboto {
-    font-family: 'Roboto Mono', sans-serif;
+    font-family: "Roboto Mono", sans-serif;
 }
 
 .font-titillium {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: "Titillium Web", sans-serif;
 }
 
 .font-bold {
     font-weight: bold;
+}
+
+.position-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 50px;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
 }
