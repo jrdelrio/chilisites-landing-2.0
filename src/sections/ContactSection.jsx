@@ -49,7 +49,7 @@ export const ContactSection = () => {
         phone: '',
         type: '',
         message: '',
-        suscribed: isChecked,
+        subscribed: isChecked,
     }
 
     const [formData, setFormData] = useState(() => {
@@ -70,12 +70,11 @@ export const ContactSection = () => {
         setIsChecked(checked);
         setFormData(prevState => ({
             ...prevState,
-            suscribed: checked
+            subscribed: checked
         }));
     };
 
-    const handleSubmit = (event) => {
-        console.log('submit button pressed!')
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         // validacion de campos
@@ -90,78 +89,64 @@ export const ContactSection = () => {
             return;
         }
 
-        const subscriptionStatus = formData.suscribed ? "✅" : "❌";
+        const subscriptionStatus = formData.subscribed ? "✅" : "❌";
 
         const templateParams = {
-            from_name: formData.name,
-            from_email: formData.email,
-            from_phone: formData.phone,
-            from_type: formData.type,
-            from_message: formData.message,
-            subscription_status: subscriptionStatus
+            fromName: formData.name,
+            fromEmail: formData.email,
+            fromPhone: formData.phone,
+            fromType: formData.type,
+            fromMessage: formData.message,
+            fromSubscriptionStatus: subscriptionStatus
         }
 
-        // Obtener las variables desde el entorno
-        const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-        const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-        const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+        try {
+            setSubmitting(true);
+            const [internResponse, thanksResponse] = await Promise.all([
+                fetch('https://api.chilisites.com/api/chilisites/thanks-for-contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(templateParams),
+                    credentials: "same-origin"
+                }),
 
-        setSubmitting(true);
+                fetch('https://api.chilisites.com/api/chilisites/intern-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(templateParams),
+                    credentials: "same-origin"
+                })
+            ]);
 
-        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
-            .then(() => {
+            if (internResponse.ok && thanksResponse.ok) {
+                alert(
+                    "Mensaje enviado con éxito ✅. Revisa tu correo para confirmación."
+                )
+                setFormData({ name: "", email: "", phone: "", type: "", message: "", subscribed: true });
+                setSubmitting(false)
+            } else {
+                const internError = !internResponse.ok
+                    ? "Error al notificar al equipo"
+                    : "";
+                const thanksError = !thanksResponse.ok
+                    ? "Error al enviar correo de confirmación"
+                    : "";
+                alert(`Hubo un error: ${internError} ${thanksError} ❌`);
                 setSubmitting(false);
-                setShowSuccessMessage(true);
-                setTimeout(() => {
-                    setShowSuccessMessage(false);
-                }, 4000);
-
-                // alert("¡Correo enviado correctamente! 👌");
-
-                setFormData({
-                    name: "",
-                    email: "",
-                    phone: "",
-                    type: "",
-                    message: "",
-                }); //limpieza de formulario
-            },
-                (error) => {
-                    alert("Ocurrió un error al enviar el correo.");
-                }
-            );
-
-        //email de confirmación
-        const confirmationTemplateParams = {
-            from_name: formData.name,
-            from_email: formData.email,
-            from_message: formData.message
-        };
-
-        const TEMPLATE_CONFIRM_ID = "template_bxnur57";
-
-        emailjs
-            .send(
-                SERVICE_ID,
-                TEMPLATE_CONFIRM_ID,
-                confirmationTemplateParams,
-                USER_ID
-            )
-            .then(
-                (result) => {
-                    console.log(
-                        "Correo de confirmación enviado correctamente!",
-                        result.text
-                    );
-                },
-                (error) => {
-                    console.log(
-                        "Error al enviar el correo de confirmación:",
-                        error.text
-                    );
-                }
-            );
+            }
+        } catch (error) {
+            console.error("Error al enviar el formulario:", error);
+            alert("Ocurrió un error al enviar el correo.");
+        }
     }
+
+
+        
+    
 
     useEffect(() => {
         // console.log(formData)
@@ -177,7 +162,7 @@ export const ContactSection = () => {
 
         return (
             <section id='contact-section' className="font-roboto">
-                
+
                 <div className="gradient-bg">
                     <div className="gradients-container">
                         <div className="g1"></div>
