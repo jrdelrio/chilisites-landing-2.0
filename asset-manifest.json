@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.d6858b84.css",
-    "main.js": "/static/js/main.c1f762b3.js",
+    "main.css": "/static/css/main.057c155e.css",
+    "main.js": "/static/js/main.ff7f68c7.js",
     "static/js/488.2cbfbaa5.chunk.js": "/static/js/488.2cbfbaa5.chunk.js",
     "static/media/header-window.mp4": "/static/media/header-window.e199cc29e39de112eaee.mp4",
-    "static/media/rdr-photography.png": "/static/media/rdr-photography.8470232912ee9fdbdc42.png",
     "static/media/iphone-mockup.gif": "/static/media/iphone-mockup.32c2426f0eb1827a2c3e.gif",
     "static/media/header-window-loading.jpg": "/static/media/header-window-loading.7e8adfe53db6a3adc5c9.jpg",
     "static/media/macbook-mockup.gif": "/static/media/macbook-mockup.9ff829919f856657a838.gif",
+    "static/media/raimundodelrio.webp": "/static/media/raimundodelrio.d971eb3d083a9a310b9b.webp",
     "static/media/10430812.jpg": "/static/media/10430812.5ae14f28019f9f550cc2.jpg",
     "static/media/shopify-partners-mockup.png": "/static/media/shopify-partners-mockup.27c0e07cf048fb3721b8.png",
+    "static/media/kado.jpg": "/static/media/kado.60a96cd1bcddaca93d95.jpg",
     "static/media/sebastian-rodillo.jpg": "/static/media/sebastian-rodillo.a2918f5058bb7dbfee2b.jpg",
-    "static/media/decima propiedades.png": "/static/media/decima propiedades.e227c18d6114ae9c5a91.png",
     "static/media/espacio-confluye.jpg": "/static/media/espacio-confluye.77708e4d3c07a5dcab43.jpg",
     "static/media/RobotoMono-Italic-VariableFont_wght.ttf": "/static/media/RobotoMono-Italic-VariableFont_wght.a53103a7b0e22765d7ff.ttf",
     "static/media/RobotoMono-VariableFont_wght.ttf": "/static/media/RobotoMono-VariableFont_wght.e14e25b7c497634efdfe.ttf",
+    "static/media/decima.webp": "/static/media/decima.ee39b772a59fd265a2c0.webp",
     "static/media/angela-delrio.jpg": "/static/media/angela-delrio.b5703a0321fe33ea382d.jpg",
-    "static/media/lids.png": "/static/media/lids.065c2987f90f4dba57dc.png",
-    "static/media/kado.png": "/static/media/kado.be51b1d2f4c0d44a4363.png",
     "static/media/victoria-maldonado.jpg": "/static/media/victoria-maldonado.0ac82bdb21687f8b3dbe.jpg",
     "static/media/RobotoMono-SemiBoldItalic.ttf": "/static/media/RobotoMono-SemiBoldItalic.37663932da268e6b006c.ttf",
     "static/media/RobotoMono-MediumItalic.ttf": "/static/media/RobotoMono-MediumItalic.cdbe51a19ce2897078b0.ttf",
@@ -40,6 +39,7 @@
     "static/media/TitilliumWeb-Bold.ttf": "/static/media/TitilliumWeb-Bold.a267a8b6b783d7d62039.ttf",
     "static/media/TitilliumWeb-Black.ttf": "/static/media/TitilliumWeb-Black.b06b28a5ea3d6c76e3f2.ttf",
     "static/media/srodillo.png": "/static/media/srodillo.594fb9066f8ec7b3c73e.png",
+    "static/media/lids.webp": "/static/media/lids.da1d99d3d4828d2569e1.webp",
     "static/media/bg-header.jpg": "/static/media/bg-header.bb2bd85745241c7dbeb2.jpg",
     "static/media/shopify-partners-logo.png": "/static/media/shopify-partners-logo.4fb09573f3d35475ad72.png",
     "static/media/algeduc.png": "/static/media/algeduc.d2b1ccfd7389c4c44b09.png",
@@ -53,12 +53,12 @@
     "static/media/html.png": "/static/media/html.b8b5b6e3acb68e633efa.png",
     "static/media/google-ads.png": "/static/media/google-ads.aacc58f983bb9998b3c1.png",
     "index.html": "/index.html",
-    "main.d6858b84.css.map": "/static/css/main.d6858b84.css.map",
-    "main.c1f762b3.js.map": "/static/js/main.c1f762b3.js.map",
+    "main.057c155e.css.map": "/static/css/main.057c155e.css.map",
+    "main.ff7f68c7.js.map": "/static/js/main.ff7f68c7.js.map",
     "488.2cbfbaa5.chunk.js.map": "/static/js/488.2cbfbaa5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6858b84.css",
-    "static/js/main.c1f762b3.js"
+    "static/css/main.057c155e.css",
+    "static/js/main.ff7f68c7.js"
   ]
 }
