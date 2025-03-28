@@ -127,7 +127,7 @@ export const ContactSection = () => {
                     "Mensaje enviado con éxito ✅. Revisa tu correo para confirmación."
                 )
                 setFormData({ name: "", email: "", phone: "", type: "", message: "", subscribed: true });
-                setSubmitting(false)
+
             } else {
                 const internError = !internResponse.ok
                     ? "Error al notificar al equipo"
@@ -136,12 +136,13 @@ export const ContactSection = () => {
                     ? "Error al enviar correo de confirmación"
                     : "";
                 alert(`Hubo un error: ${internError} ${thanksError} ❌`);
-                setSubmitting(false);
+
             }
         } catch (error) {
             console.error("Error al enviar el formulario:", error);
             alert("Ocurrió un error al enviar el correo.");
         }
+setSubmitting(false)
     }
 
 
