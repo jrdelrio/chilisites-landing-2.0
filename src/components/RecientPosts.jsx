@@ -24,8 +24,6 @@ export const RecientPosts = () => {
             });
     }, []);
 
-    console.log(last3Posts);
-
 
     return (
         <aside className="position-sticky">

@@ -2,12 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
 import { SectionTitle } from "../components/SectionTitle"
 import { CustomCheckbox } from "../components/CustomCheckbox";
-// import { motion, useInView } from "motion/react";
 import { motion, useInView } from "framer-motion";
 import "../styles/contact-section.scss";
 
-
-import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
 
@@ -42,7 +39,6 @@ export const ContactSection = () => {
     const colorPink = 'var(--color-pink)';
     const colorWhite = 'var(--color-white)';
 
-
     const emptyForm = {
         name: '',
         email: '',
@@ -66,7 +62,6 @@ export const ContactSection = () => {
     }
 
     const handleCheckboxChange = (checked) => {
-        console.log('checkbox clicked!');
         setIsChecked(checked);
         setFormData(prevState => ({
             ...prevState,
@@ -103,7 +98,7 @@ export const ContactSection = () => {
         try {
             setSubmitting(true);
             const [internResponse, thanksResponse] = await Promise.all([
-                fetch('https://api.chilisites.com/api/chilisites/thanks-for-contact', {
+                fetch('http://api.chilisites.com/api/chilisites/thanks-for-contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -112,7 +107,7 @@ export const ContactSection = () => {
                     credentials: "same-origin"
                 }),
 
-                fetch('https://api.chilisites.com/api/chilisites/intern-email', {
+                fetch('http://api.chilisites.com/api/chilisites/intern-email', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -142,22 +137,8 @@ export const ContactSection = () => {
             console.error("Error al enviar el formulario:", error);
             alert("Ocurrió un error al enviar el correo.");
         }
-setSubmitting(false)
+        setSubmitting(false)
     }
-
-
-        
-    
-
-    useEffect(() => {
-        // console.log(formData)
-    }, [formData]);
-
-    useEffect(() => {
-        (() => {
-            emailjs.init({ publicKey: "service_eknlyzc" });
-        })();
-    }, []);
 
     if (!mobileDevice) {
 
@@ -228,14 +209,14 @@ setSubmitting(false)
                         >
                         </textarea>
 
-                        <CustomCheckbox
+                        {/* <CustomCheckbox
                             checkColor={colorPurple}
                             bgColor={`linear-gradient(to right, ${colorWhite} 90%, ${colorPink} 10%)`}
                             labelText="<Suscribirse_al_newsletter/>"
                             size={15}
                             isChecked={isChecked}
                             onCheckboxChange={handleCheckboxChange}
-                        />
+                        /> */}
 
                         <div className="content-center">
                             <ChilisitesStyledButton
@@ -252,10 +233,6 @@ setSubmitting(false)
                         {"<Mensaje_enviado!>"}
                     </span>
                 </div>
-                <script
-                    type="text/javascript"
-                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-                ></script>
             </section>
         )
     } else {
@@ -356,14 +333,14 @@ setSubmitting(false)
                         >
                         </motion.textarea>
 
-                        <CustomCheckbox
+                        {/* <CustomCheckbox
                             checkColor={colorPurple}
                             bgColor={`linear-gradient(to right, ${colorWhite} 90%, ${colorPink} 10%)`}
                             labelText="<Suscribirse_al_newsletter/>"
                             size={15}
                             isChecked={isChecked}
                             onCheckboxChange={handleCheckboxChange}
-                        />
+                        /> */}
 
                         <div className="content-center">
                             <ChilisitesStyledButton
@@ -380,14 +357,6 @@ setSubmitting(false)
                         {"<Mensaje_enviado!>"}
                     </span>
                 </div>
-                <script
-                    type="text/javascript"
-                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-                ></script>
-                {/* <script type="text/javascript">
-                    (function () {
-                        emailjs.init({ publicKey: "service_eknlyzc" })})();
-                </script> */}
             </section>
         )
     }

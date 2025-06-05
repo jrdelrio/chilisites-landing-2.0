@@ -59,14 +59,14 @@ export const Navbar = () => {
                                 Sobre Nosotros
                             </button>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <Link
                                 className="nav-link text-white"
                                 to="/blog"
                             >
                                 Blog
                             </Link>
-                        </li>
+                        </li> */}
                         {/* <li className="nav-item">
                             <a className="nav-link text-white" onClick={() => scrollToSection('blog-section')}>Blog</a>
                         </li> */}

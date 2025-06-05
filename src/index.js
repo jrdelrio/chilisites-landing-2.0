@@ -31,6 +31,7 @@ const App = () => {
                 <Route path="/blog/" element={<BlogPage />} />
                 <Route path="/blog/:slug" element={<PostPage />} />
                 <Route path="/add_post" element={<AddPostPage />} />
+                {/* <Route path="/pagos" element={< />} /> */}
             </Routes>
             <Footer ref={footerRef} />
         </BrowserRouter>

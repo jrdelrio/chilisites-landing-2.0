@@ -48,7 +48,7 @@ export const Footer = () => {
                 <button onClick={() => handleNavigation('quotes-about-section')}>Sobre_Nosotros</button>
                 {/* <a href="">Blog</a> */}
                 <button onClick={() => handleNavigation('contact-section')}>Contacto</button>
-                <Link to="/blog">Blog</Link>
+                {/* <Link to="/blog">Blog</Link> */}
             </div>
 
             <div className="contact">

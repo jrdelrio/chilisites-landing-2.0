@@ -14,17 +14,6 @@ export const MockupShopify = forwardRef((props, ref) => {
     const isInView = useInView(shopifyRef);
     const [mobile, setMobile] = useState(isMobile());
 
-    useEffect(() => {
-        console.log("shopify is in view: ", isInView)
-    }, [isInView]);
-
-    useEffect(() => {
-        // const handleResize = () => setMobile(isMobile());
-        // window.addEventListener("resize", handleResize);
-        // return () => window.removeEventListener("resize", handleResize);
-        console.log("shopify is mobile: ", mobile)
-    }, []);
-
     return (
         <motion.article
             ref={shopifyRef}

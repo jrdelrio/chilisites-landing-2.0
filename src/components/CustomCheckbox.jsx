@@ -42,10 +42,6 @@ export const CustomCheckbox = ({ checkColor, bgColor, labelText, size, isChecked
                 className="checkmark-container"
             >
                 {isChecked && <span className="checkmark" style={styles.checkmark}
-                // onClick={() => {
-                //     console.log('checkbox clicado!');
-                //     setIsChecked(!isChecked);
-                // }} 
                 >✓</span>}
             </div>
 

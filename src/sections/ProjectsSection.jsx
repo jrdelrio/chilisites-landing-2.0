@@ -26,7 +26,6 @@ export const ProjectsSection = () => {
         if (cardRef.current) {
             const rect = cardRef.current.getBoundingClientRect();
             setCardHeight(rect.height);
-            // console.log("Card height: ", rect.height)
         }
     }, [cardRef]);
 

@@ -40,9 +40,6 @@ export const CardService = ({ cardTitle, cardIcon, bgColorL, bgColorR, contentCo
     const resolvedBgColorL = getCSSVariableValue(bgColorL);
     const resolvedBgColorR = getCSSVariableValue(bgColorR);
 
-    // console.log("Color izquierdo:", resolvedBgColorL);
-    // console.log("Color derecho:", resolvedBgColorR);
-
     // Convertir los colores obtenidos a formato rgba
     const bgL_RGBA = hexToRGBA(resolvedBgColorL, 1);
     const bgR_RGBA = hexToRGBA(resolvedBgColorR, 1);

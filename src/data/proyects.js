@@ -6,6 +6,11 @@ import kado from "../img/projects/kado.jpg";
 import decima from "../img/projects/decima.webp";
 import photography from "../img/projects/raimundodelrio.webp";
 import lids from "../img/projects/lids.webp";
+import estudioSerrano from "../img/projects/estudio-serrano.png";
+import parqueLipangue from "../img/projects/parque-lipangue.png";
+import orderEat from "../img/projects/order-eat.png";
+import rrcPhotography from "../img/projects/rrc-photo.png";
+import laBirraEsquina from "../img/projects/la-birra.png";
 
 
 
@@ -57,5 +62,36 @@ export const projects = [
         image: sebastianRodillo,
         link: 'https://www.rodillo.red/',
         type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<Estudio_Serrano_Abogados',
+        image: estudioSerrano,
+        link: 'https://www.estudioserrano.cl/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<Parque_Lipangue_Eventos',
+        image: parqueLipangue,
+        link: 'https://parquelipangue.cl/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<Order_Eat',
+        image: orderEat,
+        link: 'https://landing.ordereat.com/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<Raimundo_DelRio_Photography',
+        image: rrcPhotography,
+        link: 'https://www.raimundodelrio.cl/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<La_Birra_Esquina',
+        image: laBirraEsquina,
+        link: 'https://la-birra.vercel.app/',
+        type: 'CHILISITE'
     }
+
 ];
