@@ -98,7 +98,7 @@ export const ContactSection = () => {
         try {
             setSubmitting(true);
             const [internResponse, thanksResponse] = await Promise.all([
-                fetch('http://api.chilisites.com/api/chilisites/thanks-for-contact', {
+                fetch('https://api.chilisites.com/send-email-thanks-for-contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ export const ContactSection = () => {
                     credentials: "same-origin"
                 }),
 
-                fetch('http://api.chilisites.com/api/chilisites/intern-email', {
+                fetch('https://api.chilisites.com/send-email-to-chilisites', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
