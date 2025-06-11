@@ -9,7 +9,6 @@ import lids from "../img/projects/lids.webp";
 import estudioSerrano from "../img/projects/estudio-serrano.png";
 import parqueLipangue from "../img/projects/parque-lipangue.png";
 import orderEat from "../img/projects/order-eat.png";
-import rrcPhotography from "../img/projects/rrc-photo.png";
 import laBirraEsquina from "../img/projects/la-birra.png";
 
 
@@ -79,12 +78,6 @@ export const projects = [
         cardTitle: '<Order_Eat',
         image: orderEat,
         link: 'https://ordereat-landings.vercel.app/',
-        type: 'CHILISITE'
-    },
-    {
-        cardTitle: '<Raimundo_DelRio_Photography',
-        image: rrcPhotography,
-        link: 'https://www.raimundodelrio.cl/',
         type: 'CHILISITE'
     },
     {

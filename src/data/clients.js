@@ -11,6 +11,9 @@ import sieteTintas from "../img/clients-logos/sieteTintas.png";
 import srodillo from "../img/clients-logos/srodillo.png";
 import victoriaMaldonado from "../img/clients-logos/victoriamaldonado.png";
 import sporium from "../img/clients-logos/sporium.png";
+import orderEat from "../img/clients-logos/orderEat.svg";
+import estudioSerrano from "../img/clients-logos/estudioSerrano.png";
+import parqueLipangue from "../img/clients-logos/parqueLipangue.png";
 
 export const clients = [
     algeduc, 
@@ -26,4 +29,7 @@ export const clients = [
     sporium,
     decima, 
     victoriaMaldonado,
+    estudioSerrano,
+    parqueLipangue,
+    orderEat
 ];

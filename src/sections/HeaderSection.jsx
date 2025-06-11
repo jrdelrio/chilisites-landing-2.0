@@ -1,14 +1,14 @@
-import { AuroraEffectText } from '../components/AuroraEffectText';
+// import { AuroraEffectText } from '../components/AuroraEffectText';
 import { Navbar } from '../components/Navbar';
 import { Typewriter } from 'react-simple-typewriter';
 import { MockupShopify } from '../components/MockupShopify';
 import { ChilisitesStyledButton } from "../components/ChilisitesStyledButton";
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 
 import "../styles/header-section.scss";
 
-import macbookMockup from '../img/mockups/macbook-mockup.gif';
-import iphoneMockup from '../img/mockups/iphone-mockup.gif';
+// import macbookMockup from '../img/mockups/macbook-mockup.gif';
+// import iphoneMockup from '../img/mockups/iphone-mockup.gif';
 import { MockupWindow } from '../components/MockupWindow';
 import { useEffect, useRef, useState } from 'react';
 

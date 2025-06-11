@@ -7,7 +7,6 @@
     z-index: 100;
 
     .tech-group {
-        margin-left: 50px;
         h3 {
             font-family: "Roboto Mono", sans-serif;
             font-size: 20px;
@@ -15,22 +14,9 @@
             width: fit-content;
             font-weight: bold;
         }
-        details {
-            summary::marker {
-                content: "+";
-                transform: rotate(0deg);
-                transition: transform 0.3s ease;
-            }
-        }
-
-        details[open] summary::marker {
-            transform: rotate(45deg);
-        }
-        p {
-            font-family: "Roboto Mono", sans-serif;
-            font-size: 16px;
-        }
+        
         .technologies-grid {
+            margin-left: 50px;
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -52,7 +38,7 @@
                     transition: grayscale 0.2s ease, scale 0.2s ease;
 
                     @media (width < 500px) {
-                        height: 40px;
+                        height: 35px;
                     }
 
                     &:hover {
