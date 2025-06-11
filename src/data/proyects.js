@@ -78,7 +78,7 @@ export const projects = [
     {
         cardTitle: '<Order_Eat',
         image: orderEat,
-        link: 'https://landing.ordereat.com/',
+        link: 'https://ordereat-landings.vercel.app/',
         type: 'CHILISITE'
     },
     {
