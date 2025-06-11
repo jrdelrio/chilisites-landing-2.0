@@ -60,7 +60,7 @@ export const projects = [
     {
         cardTitle: '<Sebastián_Rodillo_Profile',
         image: sebastianRodillo,
-        link: 'https://www.rodillo.red/',
+        link: 'https://jrdelrio.github.io/srodillo-profile/',
         type: 'CHILISITE'
     },
     {
