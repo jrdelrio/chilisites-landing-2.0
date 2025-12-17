@@ -10,6 +10,10 @@ import estudioSerrano from "../img/projects/estudio-serrano.png";
 import parqueLipangue from "../img/projects/parque-lipangue.png";
 import orderEat from "../img/projects/order-eat.png";
 import laBirraEsquina from "../img/projects/la-birra.png";
+import grpIngenieria from "../img/projects/grp-ingenieria.png";
+import fsrInspecciones from "../img/projects/fsr-inspecciones.png";
+import drPrieto from "../img/projects/dr-domingo-prieto.png";
+import fhmPersianas from "../img/projects/fhm-persianas.png";
 
 
 
@@ -50,12 +54,12 @@ export const projects = [
         link: 'https://www.raimundodelrio.cl/',
         type: 'CHILISITE'
     },
-    {
-        cardTitle: '<LID_Security',
-        image: lids,
-        link: 'https://www.lids.cl/',
-        type: 'CHILISITE'
-    },
+    // {
+    //     cardTitle: '<LID_Security',
+    //     image: lids,
+    //     link: 'https://www.lids.cl/',
+    //     type: 'CHILISITE'
+    // },
     {
         cardTitle: '<Sebastián_Rodillo_Profile',
         image: sebastianRodillo,
@@ -83,8 +87,35 @@ export const projects = [
     {
         cardTitle: '<La_Birra_Esquina',
         image: laBirraEsquina,
-        link: 'https://la-birra.vercel.app/',
+        link: 'https://www.labirraesquina.cl/',
         type: 'CHILISITE'
-    }
+    },
+    {
+        cardTitle: '<Dr_Domingo_Prieto',
+        image: drPrieto,
+        link: 'https://www.jdomingoprieto.com/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<GRP_Ingeniería',
+        image: grpIngenieria,
+        link: 'https://www.grpingenieria.cl/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<FSR_Inspecciones',
+        image: fsrInspecciones,
+        link: 'https://www.fsrinspecciones.cl/',
+        type: 'CHILISITE'
+    },
+    {
+        cardTitle: '<FHM_Persianas',
+        image: fhmPersianas,
+        link: 'https://www.fhm-persianas.com/',
+        type: 'CHILISITE'
+    },
+    
+
+
 
 ];

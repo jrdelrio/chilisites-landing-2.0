@@ -14,6 +14,12 @@ import sporium from "../img/clients-logos/sporium.png";
 import orderEat from "../img/clients-logos/orderEat.svg";
 import estudioSerrano from "../img/clients-logos/estudioSerrano.png";
 import parqueLipangue from "../img/clients-logos/parqueLipangue.png";
+import fhmPersianas from "../img/clients-logos/fhm-persianas.png";
+import drPrieto from "../img/clients-logos/dr-prieto.png";
+import fsrInspecciones from "../img/clients-logos/fsr-inspecciones.png";
+import grpIngenieria from "../img/clients-logos/grp-ingenieria.jpg";
+import cubik from "../img/clients-logos/cubik.png";
+import metafood from "../img/clients-logos/metafood.png";
 
 export const clients = [
     algeduc, 
@@ -31,5 +37,11 @@ export const clients = [
     victoriaMaldonado,
     estudioSerrano,
     parqueLipangue,
-    orderEat
+    orderEat,
+    fhmPersianas,
+    drPrieto,
+    fsrInspecciones,
+    grpIngenieria,
+    cubik,
+    metafood
 ];

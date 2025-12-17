@@ -61,13 +61,13 @@ export const ContactSection = () => {
         sessionStorage.setItem('formContacto', JSON.stringify(updatedFormData));
     }
 
-    const handleCheckboxChange = (checked) => {
-        setIsChecked(checked);
-        setFormData(prevState => ({
-            ...prevState,
-            subscribed: checked
-        }));
-    };
+    // const handleCheckboxChange = (checked) => {
+    //     setIsChecked(checked);
+    //     setFormData(prevState => ({
+    //         ...prevState,
+    //         subscribed: checked
+    //     }));
+    // };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
